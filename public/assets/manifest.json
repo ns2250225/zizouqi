@@ -1,0 +1,558 @@
+{
+ "version": 1,
+ "generated": "2026-10-18",
+ "atlases": {
+  "units_dungeon": {
+   "image": "atlases/units_dungeon.png",
+   "tile": 16,
+   "columns": 12
+  },
+  "units_onebit": {
+   "image": "atlases/units_onebit.png",
+   "tile": 16,
+   "columns": 49
+  },
+  "effects": {
+   "json": "atlases/effects.json",
+   "image": "atlases/effects.png",
+   "frames": [
+    "black_smoke_0",
+    "black_smoke_1",
+    "black_smoke_2",
+    "circle_01",
+    "circle_02",
+    "circle_03",
+    "circle_05",
+    "dirt_01",
+    "dirt_02",
+    "dirt_03",
+    "fire_01",
+    "fire_02",
+    "flame_01",
+    "flame_02",
+    "flame_03",
+    "flame_04",
+    "flame_05",
+    "flame_06",
+    "flare_01",
+    "ice_crystal",
+    "ice_shard",
+    "light_01",
+    "light_02",
+    "light_03",
+    "magic_01",
+    "magic_02",
+    "magic_03",
+    "magic_04",
+    "magic_05",
+    "muzzle_01",
+    "muzzle_02",
+    "pixel_explosion_00",
+    "pixel_explosion_01",
+    "pixel_explosion_02",
+    "pixel_explosion_03",
+    "pixel_explosion_04",
+    "pixel_explosion_05",
+    "pixel_explosion_06",
+    "pixel_explosion_07",
+    "pixel_explosion_08",
+    "pixel_explosion_09",
+    "proj_arrow",
+    "proj_bolt",
+    "proj_bullet",
+    "proj_javelin",
+    "proj_orb",
+    "proj_rocket",
+    "proj_shell",
+    "scorch_01",
+    "scorch_02",
+    "scratch_01",
+    "shadow",
+    "slash_01",
+    "slash_02",
+    "slash_03",
+    "slash_04",
+    "smoke_01",
+    "smoke_02",
+    "smoke_04",
+    "smoke_07",
+    "smoke_explosion_00",
+    "smoke_explosion_01",
+    "smoke_explosion_02",
+    "smoke_explosion_03",
+    "smoke_explosion_04",
+    "smoke_explosion_05",
+    "smoke_explosion_06",
+    "smoke_explosion_07",
+    "smoke_explosion_08",
+    "smoke_flash_00",
+    "smoke_flash_01",
+    "smoke_flash_02",
+    "smoke_flash_03",
+    "smoke_flash_04",
+    "smoke_flash_05",
+    "smoke_flash_06",
+    "smoke_flash_07",
+    "smoke_flash_08",
+    "spark_01",
+    "spark_02",
+    "spark_03",
+    "spark_04",
+    "spark_05",
+    "spark_06",
+    "spark_07",
+    "star_01",
+    "star_04",
+    "star_06",
+    "star_07",
+    "symbol_01",
+    "symbol_02",
+    "trace_01",
+    "trace_02",
+    "trace_04",
+    "twirl_01",
+    "twirl_02",
+    "twirl_03"
+   ]
+  }
+ },
+ "units": {
+  "militia": "units/melee/militia.png",
+  "swordsman": "units/melee/swordsman.png",
+  "shieldbearer": "units/melee/shieldbearer.png",
+  "spearman": "units/melee/spearman.png",
+  "berserker": "units/melee/berserker.png",
+  "assassin": "units/melee/assassin.png",
+  "heavy_knight": "units/melee/heavy_knight.png",
+  "paladin": "units/melee/paladin.png",
+  "samurai": "units/melee/samurai.png",
+  "barbarian": "units/melee/barbarian.png",
+  "gladiator": "units/melee/gladiator.png",
+  "hammerman": "units/melee/hammerman.png",
+  "undead_warrior": "units/melee/undead_warrior.png",
+  "orc_warrior": "units/melee/orc_warrior.png",
+  "stone_guardian": "units/melee/stone_guardian.png",
+  "giant": "units/melee/giant.png",
+  "archer": "units/ranged/archer.png",
+  "longbowman": "units/ranged/longbowman.png",
+  "crossbowman": "units/ranged/crossbowman.png",
+  "musketeer": "units/ranged/musketeer.png",
+  "sniper": "units/ranged/sniper.png",
+  "javelineer": "units/ranged/javelineer.png",
+  "artillery": "units/ranged/artillery.png",
+  "rocketeer": "units/mechanical/rocketeer.png",
+  "poison_archer": "units/ranged/poison_archer.png",
+  "frost_archer": "units/ranged/frost_archer.png",
+  "thunder_archer": "units/ranged/thunder_archer.png",
+  "elf_marksman": "units/ranged/elf_marksman.png",
+  "fire_mage": "units/magic/fire_mage.png",
+  "frost_mage": "units/magic/frost_mage.png",
+  "lightning_mage": "units/magic/lightning_mage.png",
+  "priest": "units/magic/priest.png",
+  "necromancer": "units/magic/necromancer.png",
+  "summoner": "units/magic/summoner.png",
+  "storm_warlock": "units/magic/storm_warlock.png",
+  "plague_witch": "units/magic/plague_witch.png",
+  "light_mage": "units/magic/light_mage.png",
+  "dark_mage": "units/magic/dark_mage.png",
+  "chronomancer": "units/magic/chronomancer.png",
+  "archmage": "units/magic/archmage.png",
+  "tnt": "units/mechanical/tnt.png",
+  "bomb_bot": "units/mechanical/bomb_bot.png",
+  "landmine": "units/mechanical/landmine.png",
+  "flamethrower": "units/mechanical/flamethrower.png",
+  "gatling": "units/mechanical/gatling.png",
+  "cannon": "units/mechanical/cannon.png",
+  "railgun": "units/mechanical/railgun.png",
+  "missile_launcher": "units/mechanical/missile_launcher.png",
+  "mech_spider": "units/mechanical/mech_spider.png",
+  "war_mech": "units/mechanical/war_mech.png",
+  "fire_dragon": "units/legendary/fire_dragon.png",
+  "frost_dragon": "units/legendary/frost_dragon.png",
+  "phoenix": "units/legendary/phoenix.png",
+  "thunder_titan": "units/legendary/thunder_titan.png",
+  "demon_lord": "units/legendary/demon_lord.png",
+  "angel": "units/legendary/angel.png",
+  "hydra": "units/legendary/hydra.png",
+  "ancient_treant": "units/legendary/ancient_treant.png",
+  "mecha_behemoth": "units/legendary/mecha_behemoth.png",
+  "death_knight": "units/legendary/death_knight.png",
+  "skeleton": "units/melee/skeleton.png",
+  "imp": "units/melee/imp.png",
+  "demon": "units/melee/demon.png",
+  "sapling": "units/melee/sapling.png",
+  "undead_giant": "units/melee/undead_giant.png"
+ },
+ "effects": {
+  "fire": [
+   "effects/fire/fire_01.png",
+   "effects/fire/fire_02.png",
+   "effects/fire/flame_01.png",
+   "effects/fire/flame_02.png",
+   "effects/fire/flame_03.png",
+   "effects/fire/flame_04.png",
+   "effects/fire/flame_05.png",
+   "effects/fire/flame_06.png",
+   "effects/fire/scorch_01.png",
+   "effects/fire/scorch_02.png"
+  ],
+  "lightning": [
+   "effects/lightning/spark_01.png",
+   "effects/lightning/spark_02.png",
+   "effects/lightning/spark_03.png",
+   "effects/lightning/spark_04.png",
+   "effects/lightning/spark_05.png",
+   "effects/lightning/spark_06.png",
+   "effects/lightning/spark_07.png",
+   "effects/lightning/trace_01.png",
+   "effects/lightning/trace_02.png",
+   "effects/lightning/trace_04.png"
+  ],
+  "slash": [
+   "effects/slash/slash_01.png",
+   "effects/slash/slash_02.png",
+   "effects/slash/slash_03.png",
+   "effects/slash/slash_04.png",
+   "effects/slash/scratch_01.png"
+  ],
+  "particles": [
+   "effects/particles/circle_01.png",
+   "effects/particles/circle_02.png",
+   "effects/particles/circle_03.png",
+   "effects/particles/circle_05.png",
+   "effects/particles/dirt_01.png",
+   "effects/particles/dirt_02.png",
+   "effects/particles/dirt_03.png",
+   "effects/particles/flare_01.png",
+   "effects/particles/light_01.png",
+   "effects/particles/light_02.png",
+   "effects/particles/light_03.png",
+   "effects/particles/magic_01.png",
+   "effects/particles/magic_02.png",
+   "effects/particles/magic_03.png",
+   "effects/particles/magic_04.png",
+   "effects/particles/magic_05.png",
+   "effects/particles/muzzle_01.png",
+   "effects/particles/muzzle_02.png",
+   "effects/particles/smoke_01.png",
+   "effects/particles/smoke_02.png",
+   "effects/particles/smoke_04.png",
+   "effects/particles/smoke_07.png",
+   "effects/particles/star_01.png",
+   "effects/particles/star_04.png",
+   "effects/particles/star_06.png",
+   "effects/particles/star_07.png",
+   "effects/particles/symbol_01.png",
+   "effects/particles/symbol_02.png",
+   "effects/particles/twirl_01.png",
+   "effects/particles/twirl_02.png",
+   "effects/particles/twirl_03.png"
+  ],
+  "ice": [
+   "effects/ice/ice_crystal.png",
+   "effects/ice/ice_shard.png"
+  ],
+  "explosions": [
+   "effects/explosions/pixel_explosion_00.png",
+   "effects/explosions/pixel_explosion_01.png",
+   "effects/explosions/pixel_explosion_02.png",
+   "effects/explosions/pixel_explosion_03.png",
+   "effects/explosions/pixel_explosion_04.png",
+   "effects/explosions/pixel_explosion_05.png",
+   "effects/explosions/pixel_explosion_06.png",
+   "effects/explosions/pixel_explosion_07.png",
+   "effects/explosions/pixel_explosion_08.png",
+   "effects/explosions/pixel_explosion_09.png",
+   "effects/explosions/smoke_explosion_00.png",
+   "effects/explosions/smoke_explosion_01.png",
+   "effects/explosions/smoke_explosion_02.png",
+   "effects/explosions/smoke_explosion_03.png",
+   "effects/explosions/smoke_explosion_04.png",
+   "effects/explosions/smoke_explosion_05.png",
+   "effects/explosions/smoke_explosion_06.png",
+   "effects/explosions/smoke_explosion_07.png",
+   "effects/explosions/smoke_explosion_08.png",
+   "effects/explosions/smoke_flash_00.png",
+   "effects/explosions/smoke_flash_01.png",
+   "effects/explosions/smoke_flash_02.png",
+   "effects/explosions/smoke_flash_03.png",
+   "effects/explosions/smoke_flash_04.png",
+   "effects/explosions/smoke_flash_05.png",
+   "effects/explosions/smoke_flash_06.png",
+   "effects/explosions/smoke_flash_07.png",
+   "effects/explosions/smoke_flash_08.png"
+  ]
+ },
+ "backgrounds": {
+  "grassland": "backgrounds/grassland.png",
+  "desert": "backgrounds/desert.png",
+  "dungeon": "backgrounds/dungeon.png",
+  "snow": "backgrounds/snow.png",
+  "volcano": "backgrounds/volcano.png"
+ },
+ "ui": {
+  "heart": "ui/heart.png",
+  "heart_empty": "ui/heart_empty.png",
+  "skull": "ui/skull.png",
+  "crown": "ui/crown.png",
+  "sword": "ui/sword.png",
+  "shield": "ui/shield.png",
+  "potion": "ui/potion.png",
+  "card_back_emblem": "ui/card_back_emblem.png",
+  "card_back": "cards/card_back.png"
+ },
+ "audio": {
+  "sfx": {
+   "draw_flip": [
+    "audio/sfx/draw_flip.mp3",
+    "audio/sfx/draw_flip.ogg"
+   ],
+   "card_hover": [
+    "audio/sfx/card_hover.mp3",
+    "audio/sfx/card_hover.ogg"
+   ],
+   "card_pick": [
+    "audio/sfx/card_pick.mp3",
+    "audio/sfx/card_pick.ogg"
+   ],
+   "card_shatter": [
+    "audio/sfx/card_shatter.mp3",
+    "audio/sfx/card_shatter.ogg"
+   ],
+   "reroll": [
+    "audio/sfx/reroll.mp3",
+    "audio/sfx/reroll.ogg"
+   ],
+   "click": [
+    "audio/sfx/click.mp3",
+    "audio/sfx/click.ogg"
+   ],
+   "tick": [
+    "audio/sfx/tick.mp3",
+    "audio/sfx/tick.ogg"
+   ],
+   "battle_start": [
+    "audio/sfx/battle_start.mp3",
+    "audio/sfx/battle_start.ogg"
+   ],
+   "melee_hit": [
+    "audio/sfx/melee_hit.mp3",
+    "audio/sfx/melee_hit.ogg"
+   ],
+   "melee_hit2": [
+    "audio/sfx/melee_hit2.mp3",
+    "audio/sfx/melee_hit2.ogg"
+   ],
+   "melee_heavy": [
+    "audio/sfx/melee_heavy.mp3",
+    "audio/sfx/melee_heavy.ogg"
+   ],
+   "bow_shot": [
+    "audio/sfx/bow_shot.mp3",
+    "audio/sfx/bow_shot.ogg"
+   ],
+   "gun_shot": [
+    "audio/sfx/gun_shot.mp3",
+    "audio/sfx/gun_shot.ogg"
+   ],
+   "cannon_shot": [
+    "audio/sfx/cannon_shot.mp3",
+    "audio/sfx/cannon_shot.ogg"
+   ],
+   "explosion": [
+    "audio/sfx/explosion.mp3",
+    "audio/sfx/explosion.ogg"
+   ],
+   "explosion_big": [
+    "audio/sfx/explosion_big.mp3",
+    "audio/sfx/explosion_big.ogg"
+   ],
+   "lightning": [
+    "audio/sfx/lightning.mp3",
+    "audio/sfx/lightning.ogg"
+   ],
+   "magic_cast": [
+    "audio/sfx/magic_cast.mp3",
+    "audio/sfx/magic_cast.ogg"
+   ],
+   "fire_cast": [
+    "audio/sfx/fire_cast.mp3",
+    "audio/sfx/fire_cast.ogg"
+   ],
+   "frost_cast": [
+    "audio/sfx/frost_cast.mp3",
+    "audio/sfx/frost_cast.ogg"
+   ],
+   "heal": [
+    "audio/sfx/heal.mp3",
+    "audio/sfx/heal.ogg"
+   ],
+   "summon": [
+    "audio/sfx/summon.mp3",
+    "audio/sfx/summon.ogg"
+   ],
+   "laser": [
+    "audio/sfx/laser.mp3",
+    "audio/sfx/laser.ogg"
+   ],
+   "stomp": [
+    "audio/sfx/stomp.mp3",
+    "audio/sfx/stomp.ogg"
+   ],
+   "death": [
+    "audio/sfx/death.mp3",
+    "audio/sfx/death.ogg"
+   ],
+   "revive": [
+    "audio/sfx/revive.mp3",
+    "audio/sfx/revive.ogg"
+   ],
+   "legend_appear": [
+    "audio/sfx/legend_appear.mp3",
+    "audio/sfx/legend_appear.ogg"
+   ],
+   "mythic_appear": [
+    "audio/sfx/mythic_appear.mp3",
+    "audio/sfx/mythic_appear.ogg"
+   ],
+   "combo": [
+    "audio/sfx/combo.mp3",
+    "audio/sfx/combo.ogg"
+   ],
+   "victory": [
+    "audio/sfx/victory.mp3",
+    "audio/sfx/victory.ogg"
+   ],
+   "defeat": [
+    "audio/sfx/defeat.mp3",
+    "audio/sfx/defeat.ogg"
+   ],
+   "hp_loss": [
+    "audio/sfx/hp_loss.mp3",
+    "audio/sfx/hp_loss.ogg"
+   ],
+   "rage": [
+    "audio/sfx/rage.mp3",
+    "audio/sfx/rage.ogg"
+   ]
+  },
+  "bgm": {
+   "menu": [
+    "audio/bgm/menu.mp3"
+   ],
+   "battle": [
+    "audio/bgm/battle.mp3"
+   ],
+   "rage": [
+    "audio/bgm/rage.mp3"
+   ]
+  }
+ },
+ "credits": [
+  {
+   "id": "tiny-dungeon",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/tiny-dungeon",
+   "usage": "单位角色 Sprite"
+  },
+  {
+   "id": "1-bit-pack",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/1-bit-pack",
+   "usage": "传奇单位、图标"
+  },
+  {
+   "id": "particle-pack",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/particle-pack",
+   "usage": "粒子与技能特效"
+  },
+  {
+   "id": "smoke-particles",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/smoke-particles",
+   "usage": "烟雾与爆炸"
+  },
+  {
+   "id": "tiny-town",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/tiny-town",
+   "usage": "战场地面瓦片"
+  },
+  {
+   "id": "impact-sounds",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/impact-sounds",
+   "usage": "打击音效"
+  },
+  {
+   "id": "interface-sounds",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/interface-sounds",
+   "usage": "界面音效"
+  },
+  {
+   "id": "rpg-audio",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/rpg-audio",
+   "usage": "翻牌、武器音效"
+  },
+  {
+   "id": "sci-fi-sounds",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/sci-fi-sounds",
+   "usage": "爆炸、激光、雷电音效"
+  },
+  {
+   "id": "digital-audio",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/digital-audio",
+   "usage": "魔法音效"
+  },
+  {
+   "id": "music-jingles",
+   "author": "Kenney",
+   "license": "CC0 1.0",
+   "page": "https://kenney.nl/assets/music-jingles",
+   "usage": "胜利/失败短乐"
+  },
+  {
+   "id": "battle-theme-a",
+   "author": "cynicmusic",
+   "license": "CC0 1.0",
+   "page": "https://opengameart.org/content/battle-theme-a",
+   "usage": "战斗 BGM"
+  },
+  {
+   "id": "battle-theme-b",
+   "author": "cynicmusic",
+   "license": "CC0 1.0",
+   "page": "https://opengameart.org/content/battle-theme-b-for-rpg",
+   "usage": "狂暴阶段 BGM"
+  },
+  {
+   "id": "town-theme",
+   "author": "cynicmusic",
+   "license": "CC0 1.0",
+   "page": "https://opengameart.org/content/town-theme-rpg",
+   "usage": "主菜单/抽卡 BGM"
+  },
+  {
+   "id": "explosion-animations",
+   "author": "OpenGameArt contributor",
+   "license": "CC0 1.0",
+   "page": "https://opengameart.org/content/explosion-animations",
+   "usage": "爆炸 Sprite Sheet"
+  }
+ ]
+}

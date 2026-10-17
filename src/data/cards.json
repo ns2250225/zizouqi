@@ -1,0 +1,2572 @@
+{
+ "cards": [
+  {
+   "id": "u_militia",
+   "name": "民兵",
+   "description": "召唤 5 名民兵：基础近战，人数众多",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "⚔️",
+   "unit": "militia",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "militia",
+     "count": 5
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "human",
+    "infantry",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_swordsman",
+   "name": "剑士",
+   "description": "召唤 3 名剑士：连续斩击，有概率攻击两次",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "⚔️",
+   "unit": "swordsman",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "swordsman",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "human",
+    "infantry",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_shieldbearer",
+   "name": "盾兵",
+   "description": "召唤 3 名盾兵：格挡大量伤害的前排",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🛡️",
+   "unit": "shieldbearer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "shieldbearer",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "human",
+    "infantry",
+    "tank"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_spearman",
+   "name": "长枪兵",
+   "description": "召唤 4 名长枪兵：攻击距离较长，克制骑兵",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "⚔️",
+   "unit": "spearman",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "spearman",
+     "count": 4
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "anti_cavalry",
+    "human",
+    "infantry",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_berserker",
+   "name": "狂战士",
+   "description": "召唤 2 名狂战士：生命越低攻速越快",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "⚔️",
+   "unit": "berserker",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "berserker",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "infantry",
+    "orc",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_assassin",
+   "name": "双刀刺客",
+   "description": "召唤 2 名双刀刺客：突进敌方后排快速刺杀",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🗡️",
+   "unit": "assassin",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "assassin",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "assassin",
+    "elf",
+    "infantry"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_heavy_knight",
+   "name": "重甲骑士",
+   "description": "召唤 3 名重甲骑士：冲锋击退敌人",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🐎",
+   "unit": "heavy_knight",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "heavy_knight",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "cavalry",
+    "human",
+    "knight",
+    "tank"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_paladin",
+   "name": "圣骑士",
+   "description": "召唤 2 名圣骑士：自带治疗光环",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🐎",
+   "unit": "paladin",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "paladin",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "cavalry",
+    "healer",
+    "holy",
+    "knight"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_samurai",
+   "name": "武士",
+   "description": "召唤 2 名武士：居合斩造成巨额伤害",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🐎",
+   "unit": "samurai",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "samurai",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "human",
+    "infantry",
+    "knight"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_barbarian",
+   "name": "野蛮人",
+   "description": "召唤 4 名野蛮人：范围横扫",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "⚔️",
+   "unit": "barbarian",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "barbarian",
+     "count": 4
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "infantry",
+    "orc",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_gladiator",
+   "name": "角斗士",
+   "description": "召唤 3 名角斗士：击杀敌人回复生命",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "⚔️",
+   "unit": "gladiator",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "gladiator",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "human",
+    "infantry",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_hammerman",
+   "name": "战锤兵",
+   "description": "召唤 2 名战锤兵：战锤砸地造成范围眩晕",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "⚔️",
+   "unit": "hammerman",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "hammerman",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "human",
+    "infantry",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_undead_warrior",
+   "name": "亡灵战士",
+   "description": "召唤 5 名亡灵战士：死亡时概率复活",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "⚔️",
+   "unit": "undead_warrior",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "undead_warrior",
+     "count": 5
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "infantry",
+    "tank",
+    "undead",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_orc_warrior",
+   "name": "兽人战士",
+   "description": "召唤 3 名兽人战士：高生命高伤害",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "⚔️",
+   "unit": "orc_warrior",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "orc_warrior",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "infantry",
+    "orc",
+    "tank",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_stone_guardian",
+   "name": "石像守卫",
+   "description": "召唤 2 名石像守卫：极高防御的守卫",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🛡️",
+   "unit": "stone_guardian",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "stone_guardian",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "construct",
+    "nature",
+    "tank"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_giant",
+   "name": "巨人",
+   "description": "召唤 1 名巨人：大范围践踏震地",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🛡️",
+   "unit": "giant",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "giant",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "large",
+    "orc",
+    "tank"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_archer",
+   "name": "弓箭手",
+   "description": "召唤 3 名弓箭手：稳定的远程射击",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "🏹",
+   "unit": "archer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "archer",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "archer",
+    "human",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_longbowman",
+   "name": "长弓手",
+   "description": "召唤 2 名长弓手：超远射程",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🏹",
+   "unit": "longbowman",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "longbowman",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "archer",
+    "elf",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_crossbowman",
+   "name": "连弩手",
+   "description": "召唤 3 名连弩手：快速连射",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "🏹",
+   "unit": "crossbowman",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "crossbowman",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "archer",
+    "human",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_musketeer",
+   "name": "火枪手",
+   "description": "召唤 3 名火枪手：高穿透伤害",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔫",
+   "unit": "musketeer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "musketeer",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "gunner",
+    "human",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_sniper",
+   "name": "狙击手",
+   "description": "召唤 1 名狙击手：优先狙杀高威胁目标",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🔫",
+   "unit": "sniper",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "sniper",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "gunner",
+    "human",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_javelineer",
+   "name": "投矛兵",
+   "description": "召唤 4 名投矛兵：标枪穿刺多个敌人",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "⚔️",
+   "unit": "javelineer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "javelineer",
+     "count": 4
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "human",
+    "ranged",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_artillery",
+   "name": "炮兵",
+   "description": "召唤 2 名炮兵：抛射炮弹范围轰炸",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "💣",
+   "unit": "artillery",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "artillery",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "explosive",
+    "human",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_rocketeer",
+   "name": "火箭兵",
+   "description": "召唤 2 名火箭兵：发射爆炸箭矢",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "💣",
+   "unit": "rocketeer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "rocketeer",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "explosive",
+    "mech",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_poison_archer",
+   "name": "毒箭手",
+   "description": "召唤 3 名毒箭手：箭矢附带持续中毒",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "🏹",
+   "unit": "poison_archer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "poison_archer",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "archer",
+    "elf",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_frost_archer",
+   "name": "冰霜射手",
+   "description": "召唤 3 名冰霜射手：箭矢减速敌人",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🏹",
+   "unit": "frost_archer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "frost_archer",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "archer",
+    "elf",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_thunder_archer",
+   "name": "雷电射手",
+   "description": "召唤 2 名雷电射手：箭矢引发连锁闪电",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🏹",
+   "unit": "thunder_archer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "thunder_archer",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "archer",
+    "elf",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_elf_marksman",
+   "name": "精灵神射手",
+   "description": "召唤 1 名精灵神射手：极高暴击率的神射手",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🏹",
+   "unit": "elf_marksman",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "elf_marksman",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "archer",
+    "elf",
+    "ranged"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_fire_mage",
+   "name": "火焰法师",
+   "description": "召唤 2 名火焰法师：释放火球爆炸",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": "fire_mage",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "fire_mage",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "caster",
+    "elemental",
+    "fire",
+    "mage"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_frost_mage",
+   "name": "冰霜法师",
+   "description": "召唤 2 名冰霜法师：冰冻控制敌人",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": "frost_mage",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "frost_mage",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "caster",
+    "elemental",
+    "ice",
+    "mage"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_lightning_mage",
+   "name": "雷电法师",
+   "description": "召唤 2 名雷电法师：释放闪电链",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": "lightning_mage",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "lightning_mage",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "caster",
+    "elemental",
+    "lightning",
+    "mage"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_priest",
+   "name": "治疗牧师",
+   "description": "召唤 2 名治疗牧师：自动治疗受伤友军",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": "priest",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "priest",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "caster",
+    "healer",
+    "holy",
+    "mage"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_necromancer",
+   "name": "死灵法师",
+   "description": "召唤 1 名死灵法师：不断召唤骷髅",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🔮",
+   "unit": "necromancer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "necromancer",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "caster",
+    "mage",
+    "summoner",
+    "undead"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_summoner",
+   "name": "召唤师",
+   "description": "召唤 2 名召唤师：召唤小魔物作战",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": "summoner",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "summoner",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "caster",
+    "demon",
+    "mage",
+    "summoner"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_storm_warlock",
+   "name": "风暴术士",
+   "description": "召唤 1 名风暴术士：召唤推进的龙卷风",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🔮",
+   "unit": "storm_warlock",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "storm_warlock",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "caster",
+    "elf",
+    "lightning",
+    "mage"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_plague_witch",
+   "name": "毒雾巫师",
+   "description": "召唤 2 名毒雾巫师：制造毒雾区域",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": "plague_witch",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "plague_witch",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "caster",
+    "mage",
+    "poison",
+    "undead"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_light_mage",
+   "name": "光明法师",
+   "description": "召唤 2 名光明法师：发射神圣光束",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": "light_mage",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "light_mage",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "caster",
+    "holy",
+    "mage"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_dark_mage",
+   "name": "黑暗法师",
+   "description": "召唤 2 名黑暗法师：吸取敌人生命",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": "dark_mage",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "dark_mage",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "caster",
+    "dark",
+    "mage",
+    "undead"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_chronomancer",
+   "name": "时空法师",
+   "description": "召唤 1 名时空法师：制造局部时间减速",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🔮",
+   "unit": "chronomancer",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "chronomancer",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "caster",
+    "elemental",
+    "mage"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_archmage",
+   "name": "大魔导师",
+   "description": "召唤 1 名大魔导师：随机释放强力魔法",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🔮",
+   "unit": "archmage",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "archmage",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "caster",
+    "elemental",
+    "fire",
+    "ice",
+    "lightning",
+    "mage"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_tnt",
+   "name": "TNT",
+   "description": "召唤 3 名TNT：接敌后猛烈爆炸",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "💣",
+   "unit": "tnt",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "tnt",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "bomb",
+    "explosive",
+    "mech"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_bomb_bot",
+   "name": "自爆机器人",
+   "description": "召唤 4 名自爆机器人：自动冲向敌军自爆",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "💣",
+   "unit": "bomb_bot",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "bomb_bot",
+     "count": 4
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "bomb",
+    "explosive",
+    "mech",
+    "robot"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_landmine",
+   "name": "地雷",
+   "description": "召唤 5 名地雷：敌人经过时触发",
+   "type": "UNIT",
+   "rarity": "COMMON",
+   "icon": "💣",
+   "unit": "landmine",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "landmine",
+     "count": 5
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "bomb",
+    "explosive",
+    "mech",
+    "trap"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_flamethrower",
+   "name": "火焰喷射器",
+   "description": "召唤 2 名火焰喷射器：持续喷射火焰",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "🔫",
+   "unit": "flamethrower",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "flamethrower",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "fire",
+    "gunner",
+    "machine",
+    "mech"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_gatling",
+   "name": "加特林炮台",
+   "description": "召唤 1 名加特林炮台：高速射击的炮台",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🔫",
+   "unit": "gatling",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "gatling",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "gunner",
+    "machine",
+    "mech",
+    "turret"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_cannon",
+   "name": "火炮",
+   "description": "召唤 2 名火炮：远程范围轰炸",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "💣",
+   "unit": "cannon",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "cannon",
+     "count": 2
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "artillery",
+    "explosive",
+    "machine",
+    "mech"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_railgun",
+   "name": "电磁炮",
+   "description": "召唤 1 名电磁炮：直线贯穿全部敌人",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🔫",
+   "unit": "railgun",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "railgun",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "gunner",
+    "machine",
+    "mech"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_missile_launcher",
+   "name": "导弹发射器",
+   "description": "召唤 1 名导弹发射器：发射追踪导弹",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "💣",
+   "unit": "missile_launcher",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "missile_launcher",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "explosive",
+    "machine",
+    "mech"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_mech_spider",
+   "name": "机械蜘蛛",
+   "description": "召唤 3 名机械蜘蛛：快速移动的近战机械",
+   "type": "UNIT",
+   "rarity": "RARE",
+   "icon": "⚔️",
+   "unit": "mech_spider",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "mech_spider",
+     "count": 3
+    }
+   ],
+   "weight": 100,
+   "minRound": 1,
+   "tags": [
+    "machine",
+    "mech",
+    "robot",
+    "warrior"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_war_mech",
+   "name": "战争机甲",
+   "description": "召唤 1 名战争机甲：重型武装机甲",
+   "type": "UNIT",
+   "rarity": "EPIC",
+   "icon": "🛡️",
+   "unit": "war_mech",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "war_mech",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 2,
+   "tags": [
+    "large",
+    "machine",
+    "mech",
+    "tank"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_fire_dragon",
+   "name": "火焰巨龙",
+   "description": "召唤 1 名火焰巨龙：龙息横扫敌阵",
+   "type": "UNIT",
+   "rarity": "LEGENDARY",
+   "icon": "🐉",
+   "unit": "fire_dragon",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "fire_dragon",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 4,
+   "tags": [
+    "dragon",
+    "fire",
+    "flying",
+    "large",
+    "legend"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_frost_dragon",
+   "name": "冰霜巨龙",
+   "description": "召唤 1 名冰霜巨龙：冰息大范围冻结",
+   "type": "UNIT",
+   "rarity": "LEGENDARY",
+   "icon": "🐉",
+   "unit": "frost_dragon",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "frost_dragon",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 4,
+   "tags": [
+    "dragon",
+    "flying",
+    "ice",
+    "large",
+    "legend"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_phoenix",
+   "name": "凤凰",
+   "description": "召唤 1 名凤凰：死亡后浴火重生",
+   "type": "UNIT",
+   "rarity": "LEGENDARY",
+   "icon": "🐉",
+   "unit": "phoenix",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "phoenix",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 4,
+   "tags": [
+    "fire",
+    "flying",
+    "holy",
+    "legend"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_thunder_titan",
+   "name": "雷霆泰坦",
+   "description": "召唤 1 名雷霆泰坦：召唤全屏闪电",
+   "type": "UNIT",
+   "rarity": "MYTHIC",
+   "icon": "🐉",
+   "unit": "thunder_titan",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "thunder_titan",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 7,
+   "tags": [
+    "elemental",
+    "large",
+    "legend",
+    "lightning"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_demon_lord",
+   "name": "恶魔领主",
+   "description": "召唤 1 名恶魔领主：召唤恶魔军团",
+   "type": "UNIT",
+   "rarity": "MYTHIC",
+   "icon": "🐉",
+   "unit": "demon_lord",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "demon_lord",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 7,
+   "tags": [
+    "dark",
+    "demon",
+    "large",
+    "legend",
+    "summoner"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_angel",
+   "name": "天使",
+   "description": "召唤 1 名天使：范围治疗并复活友军",
+   "type": "UNIT",
+   "rarity": "LEGENDARY",
+   "icon": "🐉",
+   "unit": "angel",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "angel",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 4,
+   "tags": [
+    "flying",
+    "healer",
+    "holy",
+    "legend"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_hydra",
+   "name": "九头蛇",
+   "description": "召唤 1 名九头蛇：同时攻击多个目标",
+   "type": "UNIT",
+   "rarity": "LEGENDARY",
+   "icon": "🐉",
+   "unit": "hydra",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "hydra",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 4,
+   "tags": [
+    "dragon",
+    "large",
+    "legend",
+    "poison"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_ancient_treant",
+   "name": "远古树人",
+   "description": "召唤 1 名远古树人：缠绕敌人并为友军施加护盾",
+   "type": "UNIT",
+   "rarity": "LEGENDARY",
+   "icon": "🐉",
+   "unit": "ancient_treant",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "ancient_treant",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 4,
+   "tags": [
+    "large",
+    "legend",
+    "nature",
+    "summoner",
+    "tank"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_mecha_behemoth",
+   "name": "机械巨兽",
+   "description": "召唤 1 名机械巨兽：激光与导弹齐射",
+   "type": "UNIT",
+   "rarity": "MYTHIC",
+   "icon": "🐉",
+   "unit": "mecha_behemoth",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "mecha_behemoth",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 7,
+   "tags": [
+    "large",
+    "legend",
+    "machine",
+    "mech"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "u_death_knight",
+   "name": "死亡骑士",
+   "description": "召唤 1 名死亡骑士：吸血冲锋的不死骑士",
+   "type": "UNIT",
+   "rarity": "LEGENDARY",
+   "icon": "🐉",
+   "unit": "death_knight",
+   "effects": [
+    {
+     "kind": "SPAWN",
+     "unit": "death_knight",
+     "count": 1
+    }
+   ],
+   "weight": 100,
+   "minRound": 4,
+   "tags": [
+    "cavalry",
+    "knight",
+    "legend",
+    "undead"
+   ],
+   "category": "unit",
+   "requires": null
+  },
+  {
+   "id": "b_war_spirit",
+   "name": "战意激昂",
+   "description": "永久：全军攻击 +8%",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "🔥",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "attack",
+     "value": 0.08,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "attack"
+   ],
+   "category": "attack",
+   "requires": null
+  },
+  {
+   "id": "b_precise_archery",
+   "name": "精准箭术",
+   "description": "永久：弓箭手类攻击 +30%",
+   "type": "BUFF",
+   "rarity": "RARE",
+   "icon": "🎯",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "tag:archer",
+     "stat": "attack",
+     "value": 0.3,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "attack"
+   ],
+   "category": "attack",
+   "requires": {
+    "tags": [
+     "archer"
+    ]
+   }
+  },
+  {
+   "id": "b_blade_temper",
+   "name": "锋刃淬炼",
+   "description": "永久：前排近战攻击 +15%",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "🗡️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "role:front",
+     "stat": "attack",
+     "value": 0.15,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "attack"
+   ],
+   "category": "attack",
+   "requires": null
+  },
+  {
+   "id": "b_lethal",
+   "name": "致命一击",
+   "description": "永久：全军暴击率 +10%",
+   "type": "BUFF",
+   "rarity": "RARE",
+   "icon": "💥",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "critChance",
+     "value": 0.1,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "attack"
+   ],
+   "category": "attack",
+   "requires": null
+  },
+  {
+   "id": "b_devastate",
+   "name": "毁灭打击",
+   "description": "永久：全军暴击伤害 +50%",
+   "type": "BUFF",
+   "rarity": "EPIC",
+   "icon": "☄️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "critDamage",
+     "value": 0.5,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 2,
+   "tags": [
+    "attack"
+   ],
+   "category": "attack",
+   "requires": null
+  },
+  {
+   "id": "b_armor_break",
+   "name": "破甲术",
+   "description": "永久：全军护甲穿透 +15",
+   "type": "BUFF",
+   "rarity": "RARE",
+   "icon": "🔨",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "armorPenetration",
+     "value": 15,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "attack"
+   ],
+   "category": "attack",
+   "requires": null
+  },
+  {
+   "id": "b_fury",
+   "name": "怒火燎原",
+   "description": "本回合：全军攻击 +30%",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "😡",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "attack",
+     "value": 0.3,
+     "permanent": false
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "attack"
+   ],
+   "category": "attack",
+   "requires": null
+  },
+  {
+   "id": "b_dragon_slayer",
+   "name": "屠龙秘术",
+   "description": "永久：对史诗及以上单位伤害 +40%",
+   "type": "BUFF",
+   "rarity": "EPIC",
+   "icon": "🐲",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "eliteSlayer",
+     "value": 0.4,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 3,
+   "tags": [
+    "attack"
+   ],
+   "category": "attack",
+   "requires": null
+  },
+  {
+   "id": "b_iron_will",
+   "name": "钢铁意志",
+   "description": "永久：全军生命 +12%",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "❤️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "hp",
+     "value": 0.12,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "defense"
+   ],
+   "category": "defense",
+   "requires": null
+  },
+  {
+   "id": "b_holy_shield",
+   "name": "圣盾祝福",
+   "description": "本回合：开局全军获得 25% 生命值护盾",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "🛡️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "startShield",
+     "value": 0.25,
+     "permanent": false
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "defense"
+   ],
+   "category": "defense",
+   "requires": null
+  },
+  {
+   "id": "b_ward_aura",
+   "name": "减伤光环",
+   "description": "永久：全军受到的伤害 -10%",
+   "type": "BUFF",
+   "rarity": "RARE",
+   "icon": "✨",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "damageTaken",
+     "value": -0.1,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "defense"
+   ],
+   "category": "defense",
+   "requires": null
+  },
+  {
+   "id": "b_hardened",
+   "name": "坚甲",
+   "description": "永久：全军防御 +8",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "⛓️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "defense",
+     "value": 8,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "defense"
+   ],
+   "category": "defense",
+   "requires": null
+  },
+  {
+   "id": "b_bulwark",
+   "name": "前排壁垒",
+   "description": "永久：坦克单位生命 +30%",
+   "type": "BUFF",
+   "rarity": "RARE",
+   "icon": "🧱",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "tag:tank",
+     "stat": "hp",
+     "value": 0.3,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "defense"
+   ],
+   "category": "defense",
+   "requires": {
+    "tags": [
+     "tank"
+    ]
+   }
+  },
+  {
+   "id": "b_undying",
+   "name": "不屈意志",
+   "description": "永久：单位受到致命伤害时 25% 概率保留 1 点生命",
+   "type": "BUFF",
+   "rarity": "EPIC",
+   "icon": "💖",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "cheatDeath",
+     "value": 0.25,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 2,
+   "tags": [
+    "defense"
+   ],
+   "category": "defense",
+   "requires": null
+  },
+  {
+   "id": "b_frenzy",
+   "name": "狂热",
+   "description": "永久：全军攻速 +10%",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "⚡",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "attackSpeed",
+     "value": 0.1,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "speed"
+   ],
+   "category": "speed",
+   "requires": null
+  },
+  {
+   "id": "b_quick_shot",
+   "name": "极速射击",
+   "description": "永久：远程单位攻速 +25%",
+   "type": "BUFF",
+   "rarity": "RARE",
+   "icon": "🏹",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "tag:ranged",
+     "stat": "attackSpeed",
+     "value": 0.25,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "speed"
+   ],
+   "category": "speed",
+   "requires": {
+    "tags": [
+     "ranged"
+    ]
+   }
+  },
+  {
+   "id": "b_combo_training",
+   "name": "连击训练",
+   "description": "永久：近战攻击 15% 概率连击",
+   "type": "BUFF",
+   "rarity": "RARE",
+   "icon": "🥊",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "doubleStrike",
+     "value": 0.15,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "speed"
+   ],
+   "category": "speed",
+   "requires": null
+  },
+  {
+   "id": "b_war_drums",
+   "name": "战鼓",
+   "description": "本回合：全军攻速 +30%，移速 +20%",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "🥁",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "attackSpeed",
+     "value": 0.3,
+     "permanent": false
+    },
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "moveSpeed",
+     "value": 0.2,
+     "permanent": false
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "speed"
+   ],
+   "category": "speed",
+   "requires": null
+  },
+  {
+   "id": "b_hourglass",
+   "name": "时之沙",
+   "description": "永久：技能冷却 -20%",
+   "type": "BUFF",
+   "rarity": "EPIC",
+   "icon": "⏳",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "cooldown",
+     "value": -0.2,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 2,
+   "tags": [
+    "speed"
+   ],
+   "category": "speed",
+   "requires": null
+  },
+  {
+   "id": "s_fire_amp",
+   "name": "火焰增幅",
+   "description": "永久：火焰伤害 +25%，燃烧伤害提高",
+   "type": "SPELL",
+   "rarity": "RARE",
+   "icon": "🔥",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "fireAmp",
+     "value": 0.25,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "magic"
+   ],
+   "category": "magic",
+   "requires": null
+  },
+  {
+   "id": "s_lightning_enchant",
+   "name": "闪电附魔",
+   "description": "永久：闪电伤害 +20%，闪电链弹射 +1，远程攻击 10% 概率触发闪电",
+   "type": "SPELL",
+   "rarity": "RARE",
+   "icon": "⚡",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "lightningAmp",
+     "value": 0.2,
+     "permanent": true
+    },
+    {
+     "kind": "FLAG",
+     "flag": "chainBonus",
+     "value": 1,
+     "permanent": true
+    },
+    {
+     "kind": "FLAG",
+     "flag": "lightningEnchant",
+     "value": 0.1,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "magic"
+   ],
+   "category": "magic",
+   "requires": null
+  },
+  {
+   "id": "s_frost_spread",
+   "name": "冰霜蔓延",
+   "description": "永久：冰冻范围 +30%，冰冻与减速时间 +1 秒",
+   "type": "SPELL",
+   "rarity": "RARE",
+   "icon": "❄️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "frostAmp",
+     "value": 0.3,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "magic"
+   ],
+   "category": "magic",
+   "requires": null
+  },
+  {
+   "id": "s_toxin",
+   "name": "剧毒精华",
+   "description": "永久：中毒伤害 +40%",
+   "type": "SPELL",
+   "rarity": "COMMON",
+   "icon": "☠️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "poisonAmp",
+     "value": 0.4,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "magic"
+   ],
+   "category": "magic",
+   "requires": null
+  },
+  {
+   "id": "s_arcane_surge",
+   "name": "奥术涌动",
+   "description": "永久：法师攻击 +20%",
+   "type": "SPELL",
+   "rarity": "RARE",
+   "icon": "🔮",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "tag:mage",
+     "stat": "attack",
+     "value": 0.2,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "magic"
+   ],
+   "category": "magic",
+   "requires": {
+    "tags": [
+     "mage"
+    ]
+   }
+  },
+  {
+   "id": "s_meteor",
+   "name": "陨石召唤",
+   "description": "本回合：开战时三颗陨石轰击敌群",
+   "type": "SPELL",
+   "rarity": "EPIC",
+   "icon": "☄️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "SPELL",
+     "spell": "meteor_shower",
+     "value": 3,
+     "permanent": false
+    }
+   ],
+   "weight": 70,
+   "minRound": 2,
+   "tags": [
+    "magic"
+   ],
+   "category": "magic",
+   "requires": null
+  },
+  {
+   "id": "m_extra_summon",
+   "name": "额外召唤",
+   "description": "永久：召唤技能召唤数量 +1",
+   "type": "SYNERGY",
+   "rarity": "RARE",
+   "icon": "🌀",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "summonBonus",
+     "value": 1,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "summon"
+   ],
+   "category": "summon",
+   "requires": {
+    "tags": [
+     "summoner"
+    ]
+   }
+  },
+  {
+   "id": "m_undead_rising",
+   "name": "亡灵复活",
+   "description": "永久：我方单位阵亡时 15% 概率化为骷髅兵",
+   "type": "SYNERGY",
+   "rarity": "EPIC",
+   "icon": "💀",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "deathSkeleton",
+     "value": 0.15,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 2,
+   "tags": [
+    "summon"
+   ],
+   "category": "summon",
+   "requires": null
+  },
+  {
+   "id": "m_double_militia",
+   "name": "双倍民兵",
+   "description": "永久：每回合开始自动召唤 2 名民兵；民兵卡数量翻倍",
+   "type": "SYNERGY",
+   "rarity": "COMMON",
+   "icon": "👥",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "PERM_SPAWN",
+     "unit": "militia",
+     "count": 2,
+     "permanent": true
+    },
+    {
+     "kind": "FLAG",
+     "flag": "militiaDouble",
+     "value": 1,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "summon"
+   ],
+   "category": "summon",
+   "requires": null
+  },
+  {
+   "id": "m_reserves",
+   "name": "预备军",
+   "description": "永久：每回合开始自动召唤 2 名剑士",
+   "type": "SYNERGY",
+   "rarity": "RARE",
+   "icon": "🎖️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "PERM_SPAWN",
+     "unit": "swordsman",
+     "count": 2,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "summon"
+   ],
+   "category": "summon",
+   "requires": null
+  },
+  {
+   "id": "m_summon_tome",
+   "name": "召唤之书",
+   "description": "永久：召唤物生命和攻击 +50%",
+   "type": "SYNERGY",
+   "rarity": "COMMON",
+   "icon": "📖",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "summonHp",
+     "value": 0.5,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "summon"
+   ],
+   "category": "summon",
+   "requires": null
+  },
+  {
+   "id": "t_all_charge",
+   "name": "全军冲锋",
+   "description": "本回合：开战 6 秒内全军移速 +60%、攻击 +20%",
+   "type": "SPELL",
+   "rarity": "COMMON",
+   "icon": "🚩",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "chargeStart",
+     "value": 6,
+     "permanent": false
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "tactic"
+   ],
+   "category": "tactic",
+   "requires": null
+  },
+  {
+   "id": "t_thorns",
+   "name": "反伤荆棘",
+   "description": "永久：全军反弹 15% 受到的近战伤害",
+   "type": "BUFF",
+   "rarity": "RARE",
+   "icon": "🌵",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "thorns",
+     "value": 0.15,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "tactic"
+   ],
+   "category": "tactic",
+   "requires": null
+  },
+  {
+   "id": "t_bombard",
+   "name": "开局轰炸",
+   "description": "永久：每回合开战时炮火轰炸敌军",
+   "type": "SPELL",
+   "rarity": "EPIC",
+   "icon": "💣",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "FLAG",
+     "flag": "openingBombard",
+     "value": 1,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 2,
+   "tags": [
+    "tactic"
+   ],
+   "category": "tactic",
+   "requires": null
+  },
+  {
+   "id": "t_arrow_rain",
+   "name": "箭雨",
+   "description": "本回合：开战时箭雨覆盖敌军全线",
+   "type": "SPELL",
+   "rarity": "COMMON",
+   "icon": "🌧️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "SPELL",
+     "spell": "arrow_rain",
+     "value": 1,
+     "permanent": false
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "tactic"
+   ],
+   "category": "tactic",
+   "requires": null
+  },
+  {
+   "id": "t_war_banner",
+   "name": "战旗",
+   "description": "本回合：全军生命 +25%",
+   "type": "BUFF",
+   "rarity": "COMMON",
+   "icon": "🏳️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "MOD",
+     "target": "all",
+     "stat": "hp",
+     "value": 0.25,
+     "permanent": false
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "tactic"
+   ],
+   "category": "tactic",
+   "requires": null
+  },
+  {
+   "id": "e_card_upgrade",
+   "name": "卡牌升级",
+   "description": "永久：本局选择次数最多的兵种生命与攻击 +25%",
+   "type": "SYNERGY",
+   "rarity": "RARE",
+   "icon": "⬆️",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "UPGRADE_TOP",
+     "value": 0.25,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "growth"
+   ],
+   "category": "growth",
+   "requires": {
+    "minPicks": 2
+   }
+  },
+  {
+   "id": "e_lucky_star",
+   "name": "幸运之星",
+   "description": "永久：稀有及以上卡牌出现权重 +30%",
+   "type": "SYNERGY",
+   "rarity": "RARE",
+   "icon": "🍀",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "RARITY",
+     "rarities": [
+      "RARE",
+      "EPIC",
+      "LEGENDARY",
+      "MYTHIC"
+     ],
+     "value": 0.3,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "growth"
+   ],
+   "category": "growth",
+   "requires": null
+  },
+  {
+   "id": "e_reroll",
+   "name": "重抽卷轴",
+   "description": "获得 2 次额外重抽机会",
+   "type": "SYNERGY",
+   "rarity": "COMMON",
+   "icon": "🎲",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "REROLL",
+     "value": 2,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 1,
+   "tags": [
+    "growth"
+   ],
+   "category": "growth",
+   "requires": null
+  },
+  {
+   "id": "e_elite_training",
+   "name": "精锐训练",
+   "description": "永久：召唤数量 ≥2 的兵种卡额外 +1 名单位",
+   "type": "SYNERGY",
+   "rarity": "EPIC",
+   "icon": "🏅",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "COUNT_BONUS",
+     "value": 1,
+     "minCount": 2,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 2,
+   "tags": [
+    "growth"
+   ],
+   "category": "growth",
+   "requires": null
+  },
+  {
+   "id": "e_legend_road",
+   "name": "传奇之路",
+   "description": "永久：传说与神话卡出现权重翻倍",
+   "type": "SYNERGY",
+   "rarity": "EPIC",
+   "icon": "👑",
+   "unit": null,
+   "effects": [
+    {
+     "kind": "RARITY",
+     "rarities": [
+      "LEGENDARY",
+      "MYTHIC"
+     ],
+     "value": 1.0,
+     "permanent": true
+    }
+   ],
+   "weight": 70,
+   "minRound": 4,
+   "tags": [
+    "growth"
+   ],
+   "category": "growth",
+   "requires": null
+  }
+ ]
+}

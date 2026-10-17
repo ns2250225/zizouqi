@@ -1,0 +1,97 @@
+{
+  "startHp": 8,
+  "armyCarryOver": true,
+  "drawsPerRound": 3,
+  "optionsPerDraw": 3,
+  "startRerolls": 1,
+  "rerollsPerRound": 0,
+  "rarity": {
+    "baseWeights": { "COMMON": 50, "RARE": 28, "EPIC": 16, "LEGENDARY": 5, "MYTHIC": 1 },
+    "perRound": { "COMMON": -1.6, "RARE": 0.4, "EPIC": 0.55, "LEGENDARY": 0.35, "MYTHIC": 0.12 },
+    "minWeights": { "COMMON": 18, "RARE": 20, "EPIC": 10, "LEGENDARY": 3, "MYTHIC": 0.5 },
+    "maxWeights": { "COMMON": 60, "RARE": 34, "EPIC": 30, "LEGENDARY": 15, "MYTHIC": 6 },
+    "power": { "COMMON": 10, "RARE": 14, "EPIC": 19, "LEGENDARY": 27, "MYTHIC": 37 }
+  },
+  "luckyEventChance": 0.02,
+  "comboStreakBonus": [0, 0.08, 0.16],
+  "battle": {
+    "dt": 0.0333333,
+    "maxTime": 90,
+    "rageStart": 60,
+    "rageRamp": 0.06,
+    "retargetInterval": 0.5,
+    "unitCapPerSide": { "high": 120, "medium": 90, "low": 60 },
+    "fieldLength": 1000,
+    "spawn": {
+      "front": [600, 680],
+      "mid": [700, 800],
+      "back": [800, 930]
+    }
+  },
+  "enemy": {
+    "baseBudget": 30,
+    "budgetPerRound": 2.6,
+    "budgetQuadratic": 0.05,
+    "budgetCarryOver": 42,
+    "statGrowthPerRound": 0.07,
+    "bossInterval": 10,
+    "bossHpLoss": 2,
+    "bossStatMult": 3.0,
+    "endlessGrowth": 1.5,
+    "standardStatMult": 1.3,
+    "standardGrowthPerRound": 0.04
+  },
+  "difficulties": [
+    { "id": "easy", "name": "简单", "mult": 0.8, "desc": "敌军战力 -20%" },
+    { "id": "normal", "name": "普通", "mult": 1.0, "desc": "标准体验" },
+    { "id": "hard", "name": "困难", "mult": 1.22, "desc": "敌军战力 +22%" },
+    { "id": "nightmare", "name": "噩梦", "mult": 1.5, "desc": "敌军战力 +50%，仅供勇者" }
+  ],
+  "tactics": [
+    { "id": "horde", "name": "人海战术", "icon": "👥", "desc": "大量低级兵种", "pool": ["militia", "swordsman", "undead_warrior", "javelineer", "barbarian", "spearman", "archer"], "rarityCap": "RARE" },
+    { "id": "heavy", "name": "重甲军团", "icon": "🛡️", "desc": "骑士、盾兵与巨人", "pool": ["heavy_knight", "shieldbearer", "giant", "stone_guardian", "paladin", "orc_warrior", "hammerman", "priest"] },
+    { "id": "ranged", "name": "远程火力", "icon": "🏹", "desc": "弓箭手、火炮与狙击手", "pool": ["archer", "longbowman", "crossbowman", "artillery", "sniper", "musketeer", "spearman", "shieldbearer"] },
+    { "id": "magic", "name": "法术轰炸", "icon": "🔮", "desc": "火焰、冰霜、雷电", "pool": ["fire_mage", "frost_mage", "lightning_mage", "priest", "storm_warlock", "archmage", "light_mage", "swordsman"] },
+    { "id": "explosive", "name": "自爆军团", "icon": "💣", "desc": "TNT、机器人与地雷", "pool": ["tnt", "bomb_bot", "landmine", "rocketeer", "cannon", "mech_spider", "militia"] },
+    { "id": "undead", "name": "亡灵复活", "icon": "💀", "desc": "骷髅与死灵法师", "pool": ["undead_warrior", "necromancer", "dark_mage", "plague_witch", "death_knight", "undead_warrior"] },
+    { "id": "mech", "name": "机械军团", "icon": "⚙️", "desc": "高强度机械部队", "pool": ["gatling", "cannon", "railgun", "missile_launcher", "mech_spider", "war_mech", "flamethrower", "bomb_bot", "mecha_behemoth"] },
+    { "id": "legend", "name": "传奇军团", "icon": "🐉", "desc": "少量高强度精英单位", "pool": ["fire_dragon", "frost_dragon", "phoenix", "hydra", "ancient_treant", "death_knight", "angel", "thunder_titan", "demon_lord", "mecha_behemoth"] },
+    { "id": "elite", "name": "精英法阵", "icon": "⭐", "desc": "精英单位与强力法术", "pool": ["samurai", "paladin", "elf_marksman", "chronomancer", "archmage", "sniper", "stone_guardian", "assassin", "storm_warlock"] },
+    { "id": "mixed", "name": "混合军团", "icon": "🎭", "desc": "针对你的阵容调整", "pool": [] }
+  ],
+  "roundBrackets": [
+    { "from": 1, "to": 3, "name": "基础兵种", "tactics": ["horde", "ranged", "heavy"], "rarityCap": "COMMON", "bonusRarity": [], "synergy": false, "buffs": 0 },
+    { "from": 4, "to": 6, "name": "混合近战与远程", "tactics": ["horde", "ranged", "heavy", "mixed"], "rarityCap": "RARE", "synergy": false, "buffs": 0 },
+    { "from": 7, "to": 10, "name": "职业羁绊", "tactics": ["heavy", "ranged", "magic", "explosive", "undead", "mixed"], "rarityCap": "EPIC", "synergy": true, "buffs": 1 },
+    { "from": 11, "to": 15, "name": "精英与法术", "tactics": ["elite", "magic", "undead", "mixed"], "rarityCap": "EPIC", "synergy": true, "buffs": 2, "budgetMult": 1.35 },
+    { "from": 16, "to": 20, "name": "机械军团", "tactics": ["mech", "explosive", "mixed"], "rarityCap": "MYTHIC", "synergy": true, "buffs": 2 },
+    { "from": 21, "to": 25, "name": "传奇单位", "tactics": ["legend", "elite", "mixed"], "rarityCap": "MYTHIC", "synergy": true, "buffs": 3, "budgetMult": 1.2 },
+    { "from": 26, "to": 9999, "name": "羁绊与精英混合", "tactics": ["legend", "mech", "elite", "magic", "undead", "mixed"], "rarityCap": "MYTHIC", "synergy": true, "buffs": 4, "multiTactic": true }
+  ],
+  "enemyBuffPool": [
+    { "name": "敌军强攻", "effect": { "kind": "MOD", "target": "all", "stat": "attack", "value": 0.12 } },
+    { "name": "敌军铁甲", "effect": { "kind": "MOD", "target": "all", "stat": "hp", "value": 0.15 } },
+    { "name": "敌军狂热", "effect": { "kind": "MOD", "target": "all", "stat": "attackSpeed", "value": 0.12 } },
+    { "name": "敌军坚守", "effect": { "kind": "MOD", "target": "all", "stat": "defense", "value": 6 } },
+    { "name": "敌军暴击", "effect": { "kind": "MOD", "target": "all", "stat": "critChance", "value": 0.1 } },
+    { "name": "敌军荆棘", "effect": { "kind": "FLAG", "flag": "thorns", "value": 0.1 } },
+    { "name": "敌军圣盾", "effect": { "kind": "FLAG", "flag": "startShield", "value": 0.2 } }
+  ],
+  "bosses": ["giant", "war_mech", "fire_dragon", "demon_lord", "thunder_titan", "mecha_behemoth", "hydra", "frost_dragon"],
+  "themes": [
+    { "id": "grassland", "name": "翠绿平原", "fromRound": 1 },
+    { "id": "desert", "name": "灼热沙漠", "fromRound": 6 },
+    { "id": "dungeon", "name": "幽暗地牢", "fromRound": 11 },
+    { "id": "snow", "name": "冰封雪原", "fromRound": 16 },
+    { "id": "volcano", "name": "熔岩炼狱", "fromRound": 21 }
+  ],
+  "dailyModifiers": [
+    { "id": "haste", "name": "疾风之日", "desc": "所有单位攻速 +30%", "player": [{ "kind": "MOD", "target": "all", "stat": "attackSpeed", "value": 0.3 }], "enemy": [{ "kind": "MOD", "target": "all", "stat": "attackSpeed", "value": 0.3 }] },
+    { "id": "glass", "name": "玻璃大炮", "desc": "所有单位攻击 +50%，生命 -30%", "player": [{ "kind": "MOD", "target": "all", "stat": "attack", "value": 0.5 }, { "kind": "MOD", "target": "all", "stat": "hp", "value": -0.3 }], "enemy": [{ "kind": "MOD", "target": "all", "stat": "attack", "value": 0.5 }, { "kind": "MOD", "target": "all", "stat": "hp", "value": -0.3 }] },
+    { "id": "giants", "name": "巨人之日", "desc": "传说卡出现概率大幅提升，敌军也更强", "rarityBoost": { "LEGENDARY": 2, "MYTHIC": 2 }, "enemyMult": 1.15 },
+    { "id": "explosive", "name": "爆炸狂欢", "desc": "爆炸范围 +50%", "player": [{ "kind": "FLAG", "flag": "explosiveRadius", "value": 0.5 }], "enemy": [{ "kind": "FLAG", "flag": "explosiveRadius", "value": 0.5 }] },
+    { "id": "short", "name": "速战速决", "desc": "双方初始生命为 5", "startHp": 5 },
+    { "id": "rich", "name": "命运眷顾", "desc": "开局获得 5 次重抽", "rerolls": 5 },
+    { "id": "undead", "name": "亡者之夜", "desc": "所有阵亡单位 20% 概率化为骷髅", "player": [{ "kind": "FLAG", "flag": "deathSkeleton", "value": 0.2 }], "enemy": [{ "kind": "FLAG", "flag": "deathSkeleton", "value": 0.2 }] }
+  ]
+}

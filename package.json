@@ -1,0 +1,28 @@
+{
+  "name": "one-line-battle",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "assets": "python3 -I scripts/asset_downloader.py && python3 -I scripts/sprite_packer.py && python3 -I scripts/generate_manifest.py && python3 -I scripts/asset_validator.py"
+  },
+  "dependencies": {
+    "gsap": "3.12.5",
+    "howler": "2.2.4",
+    "pinia": "2.2.6",
+    "pixi.js": "8.5.2",
+    "vue": "3.5.12"
+  },
+  "devDependencies": {
+    "@types/howler": "2.2.12",
+    "@vitejs/plugin-vue": "5.1.4",
+    "typescript": "5.6.3",
+    "vite": "5.4.10",
+    "vitest": "2.1.4",
+    "vue-tsc": "2.1.10"
+  }
+}

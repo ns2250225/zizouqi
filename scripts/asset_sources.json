@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {"id": "tiny-dungeon", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/tiny-dungeon", "url": "https://kenney.nl/media/pages/assets/tiny-dungeon/f8422efb44-1674742415/kenney_tiny-dungeon.zip", "usage": "单位角色 Sprite"},
+    {"id": "1-bit-pack", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/1-bit-pack", "url": "https://kenney.nl/media/pages/assets/1-bit-pack/aa867a1f37-1677578516/kenney_1-bit-pack.zip", "usage": "传奇单位、图标"},
+    {"id": "particle-pack", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/particle-pack", "url": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip", "usage": "粒子与技能特效"},
+    {"id": "smoke-particles", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/smoke-particles", "url": "https://kenney.nl/media/pages/assets/smoke-particles/23249a0d35-1677695171/kenney_smoke-particles.zip", "usage": "烟雾与爆炸"},
+    {"id": "tiny-town", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/tiny-town", "url": "https://kenney.nl/media/pages/assets/tiny-town/a415fbeb49-1735736916/kenney_tiny-town.zip", "usage": "战场地面瓦片"},
+    {"id": "impact-sounds", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/impact-sounds", "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip", "usage": "打击音效"},
+    {"id": "interface-sounds", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/interface-sounds", "url": "https://kenney.nl/media/pages/assets/interface-sounds/fa43c1dd4d-1677589452/kenney_interface-sounds.zip", "usage": "界面音效"},
+    {"id": "rpg-audio", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/rpg-audio", "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip", "usage": "翻牌、武器音效"},
+    {"id": "sci-fi-sounds", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/sci-fi-sounds", "url": "https://kenney.nl/media/pages/assets/sci-fi-sounds/6b296f9ecf-1677589334/kenney_sci-fi-sounds.zip", "usage": "爆炸、激光、雷电音效"},
+    {"id": "digital-audio", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/digital-audio", "url": "https://kenney.nl/media/pages/assets/digital-audio/216eac4753-1677590265/kenney_digital-audio.zip", "usage": "魔法音效"},
+    {"id": "music-jingles", "type": "zip", "author": "Kenney", "license": "CC0 1.0", "page": "https://kenney.nl/assets/music-jingles", "url": "https://kenney.nl/media/pages/assets/music-jingles/f37e530b9e-1677590399/kenney_music-jingles.zip", "usage": "胜利/失败短乐"},
+    {"id": "battle-theme-a", "type": "file", "author": "cynicmusic", "license": "CC0 1.0", "page": "https://opengameart.org/content/battle-theme-a", "url": "https://opengameart.org/sites/default/files/battleThemeA.mp3", "usage": "战斗 BGM"},
+    {"id": "battle-theme-b", "type": "file", "author": "cynicmusic", "license": "CC0 1.0", "page": "https://opengameart.org/content/battle-theme-b-for-rpg", "url": "https://opengameart.org/sites/default/files/battleThemeB.mp3", "usage": "狂暴阶段 BGM"},
+    {"id": "town-theme", "type": "file", "author": "cynicmusic", "license": "CC0 1.0", "page": "https://opengameart.org/content/town-theme-rpg", "url": "https://opengameart.org/sites/default/files/TownTheme.mp3", "usage": "主菜单/抽卡 BGM"},
+    {"id": "explosion-animations", "type": "file", "author": "OpenGameArt contributor", "license": "CC0 1.0", "page": "https://opengameart.org/content/explosion-animations", "url": "https://opengameart.org/sites/default/files/explosion3.png", "usage": "爆炸 Sprite Sheet"}
+  ]
+}

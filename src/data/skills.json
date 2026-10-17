@@ -1,0 +1,912 @@
+{
+ "skills": [
+  {
+   "id": "slash_combo",
+   "name": "连续斩击",
+   "kind": "multiHit",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "slash",
+   "element": null,
+   "params": {
+    "chance": 0.3,
+    "hits": 2
+   },
+   "desc": "30% 概率连续攻击两次"
+  },
+  {
+   "id": "shield_block",
+   "name": "格挡",
+   "kind": "block",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "block",
+   "element": null,
+   "params": {
+    "chance": 0.35,
+    "reduce": 0.6
+   },
+   "desc": "35% 概率格挡 60% 伤害"
+  },
+  {
+   "id": "anti_cavalry",
+   "name": "克制骑兵",
+   "kind": "antiTag",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "tag": "cavalry",
+    "mult": 2.0
+   },
+   "desc": "对骑兵造成 200% 伤害"
+  },
+  {
+   "id": "berserk",
+   "name": "狂暴",
+   "kind": "berserk",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "maxBonus": 1.5
+   },
+   "desc": "生命越低攻速越快，最高 +150%"
+  },
+  {
+   "id": "assassin_dash",
+   "name": "快速突进",
+   "kind": "dash",
+   "trigger": "active",
+   "cooldown": 8,
+   "initialDelay": 0.8,
+   "fx": "shadow",
+   "element": null,
+   "params": {
+    "dmgMult": 2.0
+   },
+   "desc": "突进至敌方后排并造成 200% 伤害"
+  },
+  {
+   "id": "knight_charge",
+   "name": "冲锋击退",
+   "kind": "charge",
+   "trigger": "active",
+   "cooldown": 9,
+   "initialDelay": 0.3,
+   "fx": "charge",
+   "element": null,
+   "params": {
+    "dmgMult": 2.2,
+    "knockback": 60,
+    "stun": 0.6,
+    "range": 240,
+    "radius": 35
+   },
+   "desc": "向敌人冲锋，造成 220% 伤害并击退眩晕"
+  },
+  {
+   "id": "holy_aura",
+   "name": "治疗光环",
+   "kind": "auraHeal",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "holy",
+   "element": null,
+   "params": {
+    "radius": 120,
+    "pctPerSec": 0.015
+   },
+   "desc": "每秒为附近友军回复 1.5% 最大生命"
+  },
+  {
+   "id": "iaido",
+   "name": "居合斩",
+   "kind": "iaido",
+   "trigger": "active",
+   "cooldown": 6,
+   "initialDelay": 1.5,
+   "fx": "iaido",
+   "element": null,
+   "params": {
+    "dmgMult": 3.5
+   },
+   "desc": "蓄力拔刀，必定暴击造成 350% 伤害"
+  },
+  {
+   "id": "sweep",
+   "name": "范围横扫",
+   "kind": "splash",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "sweep",
+   "element": null,
+   "params": {
+    "radius": 45,
+    "pct": 0.6
+   },
+   "desc": "攻击对周围敌人造成 60% 溅射伤害"
+  },
+  {
+   "id": "kill_heal",
+   "name": "击杀回血",
+   "kind": "onKillHeal",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "pct": 0.35
+   },
+   "desc": "击杀敌人回复 35% 最大生命"
+  },
+  {
+   "id": "hammer_stun",
+   "name": "范围眩晕",
+   "kind": "stomp",
+   "trigger": "active",
+   "cooldown": 7,
+   "initialDelay": 2,
+   "fx": "stomp_small",
+   "element": null,
+   "params": {
+    "radius": 55,
+    "dmgMult": 1.4,
+    "stun": 1.2
+   },
+   "desc": "重锤砸地，范围伤害并眩晕 1.2 秒"
+  },
+  {
+   "id": "undead_revive",
+   "name": "亡灵复生",
+   "kind": "revive",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "undead_rise",
+   "element": null,
+   "params": {
+    "chance": 0.35,
+    "hpPct": 0.5,
+    "times": 1
+   },
+   "desc": "死亡时 35% 概率以 50% 生命复活"
+  },
+  {
+   "id": "stone_skin",
+   "name": "石化皮肤",
+   "kind": "damageReduction",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "pct": 0.25
+   },
+   "desc": "受到的所有伤害降低 25%"
+  },
+  {
+   "id": "giant_stomp",
+   "name": "巨人践踏",
+   "kind": "stomp",
+   "trigger": "active",
+   "cooldown": 6,
+   "initialDelay": 2,
+   "fx": "stomp",
+   "element": null,
+   "params": {
+    "radius": 110,
+    "dmgMult": 1.8,
+    "stun": 0.8,
+    "shake": 1
+   },
+   "desc": "践踏大地，大范围伤害并眩晕"
+  },
+  {
+   "id": "rapid_fire",
+   "name": "快速连射",
+   "kind": "multiShot",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "count": 2,
+    "dmgPct": 0.7
+   },
+   "desc": "每次攻击额外射出 1 支弩箭"
+  },
+  {
+   "id": "musket_pierce",
+   "name": "穿甲弹",
+   "kind": "pierce",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "count": 1,
+    "pct": 0.7
+   },
+   "desc": "子弹贯穿 1 个额外目标"
+  },
+  {
+   "id": "javelin_pierce",
+   "name": "穿刺标枪",
+   "kind": "pierce",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "count": 2,
+    "pct": 0.6
+   },
+   "desc": "标枪贯穿 2 个额外目标"
+  },
+  {
+   "id": "artillery_splash",
+   "name": "炮击",
+   "kind": "splash",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "explosion_small",
+   "element": "explosive",
+   "params": {
+    "radius": 60,
+    "pct": 0.8
+   },
+   "desc": "炮弹落地造成范围爆炸"
+  },
+  {
+   "id": "rocket_splash",
+   "name": "爆炸箭矢",
+   "kind": "splash",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "explosion_small",
+   "element": "explosive",
+   "params": {
+    "radius": 45,
+    "pct": 0.7
+   },
+   "desc": "火箭命中后小范围爆炸"
+  },
+  {
+   "id": "poison_arrow",
+   "name": "毒箭",
+   "kind": "onHitStatus",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": "poison",
+   "params": {
+    "status": "poison",
+    "chance": 1.0,
+    "duration": 4,
+    "power": 0.35
+   },
+   "desc": "命中使敌人中毒 4 秒"
+  },
+  {
+   "id": "frost_arrow",
+   "name": "寒冰箭",
+   "kind": "onHitStatus",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": "ice",
+   "params": {
+    "status": "slow",
+    "chance": 1.0,
+    "duration": 2,
+    "power": 0.4
+   },
+   "desc": "命中使敌人减速 40%"
+  },
+  {
+   "id": "thunder_arrow",
+   "name": "雷击箭",
+   "kind": "chain",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "lightning",
+   "element": "lightning",
+   "params": {
+    "jumps": 2,
+    "pct": 0.6,
+    "range": 100
+   },
+   "desc": "命中后闪电弹射 2 个敌人"
+  },
+  {
+   "id": "fireball",
+   "name": "火球爆炸",
+   "kind": "aoeAt",
+   "trigger": "active",
+   "cooldown": 4,
+   "initialDelay": 1,
+   "fx": "fireball",
+   "element": "fire",
+   "params": {
+    "radius": 60,
+    "dmgMult": 2.2,
+    "status": "burn",
+    "duration": 3,
+    "power": 0.3,
+    "projectile": "fireball"
+   },
+   "desc": "发射火球，爆炸造成范围伤害并点燃"
+  },
+  {
+   "id": "frost_nova",
+   "name": "冰冻新星",
+   "kind": "freezeArea",
+   "trigger": "active",
+   "cooldown": 6,
+   "initialDelay": 1.5,
+   "fx": "frost",
+   "element": "ice",
+   "params": {
+    "radius": 70,
+    "dmgMult": 1.2,
+    "duration": 1.8
+   },
+   "desc": "冻结目标区域的敌人"
+  },
+  {
+   "id": "chain_lightning",
+   "name": "闪电链",
+   "kind": "chainLightning",
+   "trigger": "active",
+   "cooldown": 4,
+   "initialDelay": 1,
+   "fx": "lightning",
+   "element": "lightning",
+   "params": {
+    "jumps": 4,
+    "dmgMult": 1.8,
+    "range": 120
+   },
+   "desc": "闪电在敌人间弹射 4 次"
+  },
+  {
+   "id": "heal",
+   "name": "治疗术",
+   "kind": "healAllies",
+   "trigger": "active",
+   "cooldown": 3,
+   "initialDelay": 1.5,
+   "fx": "heal",
+   "element": "holy",
+   "params": {
+    "count": 3,
+    "pct": 0.18
+   },
+   "desc": "治疗 3 名最虚弱的友军"
+  },
+  {
+   "id": "raise_skeleton",
+   "name": "召唤骷髅",
+   "kind": "summon",
+   "trigger": "active",
+   "cooldown": 6,
+   "initialDelay": 1.5,
+   "fx": "summon_dark",
+   "element": null,
+   "params": {
+    "unit": "skeleton",
+    "count": 2
+   },
+   "desc": "召唤 2 名骷髅兵"
+  },
+  {
+   "id": "summon_imp",
+   "name": "召唤魔物",
+   "kind": "summon",
+   "trigger": "active",
+   "cooldown": 7,
+   "initialDelay": 1.5,
+   "fx": "summon_fire",
+   "element": null,
+   "params": {
+    "unit": "imp",
+    "count": 2
+   },
+   "desc": "召唤 2 只小魔物"
+  },
+  {
+   "id": "tornado",
+   "name": "龙卷风",
+   "kind": "tornado",
+   "trigger": "active",
+   "cooldown": 9,
+   "initialDelay": 2,
+   "fx": "tornado",
+   "element": "lightning",
+   "params": {
+    "dmgMult": 0.9,
+    "duration": 4,
+    "speed": 110,
+    "radius": 45,
+    "push": 70
+   },
+   "desc": "召唤向前推进的龙卷风，持续伤害并击退"
+  },
+  {
+   "id": "poison_cloud",
+   "name": "毒雾",
+   "kind": "poisonCloud",
+   "trigger": "active",
+   "cooldown": 7,
+   "initialDelay": 1.5,
+   "fx": "poison",
+   "element": "poison",
+   "params": {
+    "radius": 70,
+    "duration": 5,
+    "dmgMult": 0.6
+   },
+   "desc": "制造持续 5 秒的毒雾"
+  },
+  {
+   "id": "holy_beam",
+   "name": "神圣光束",
+   "kind": "beam",
+   "trigger": "active",
+   "cooldown": 5,
+   "initialDelay": 1.5,
+   "fx": "holy_beam",
+   "element": "holy",
+   "params": {
+    "length": 360,
+    "dmgMult": 2.4
+   },
+   "desc": "发射贯穿直线的神圣光束"
+  },
+  {
+   "id": "dark_drain",
+   "name": "暗影吸血",
+   "kind": "lifesteal",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "drain",
+   "element": null,
+   "params": {
+    "pct": 0.5
+   },
+   "desc": "攻击回复造成伤害 50% 的生命"
+  },
+  {
+   "id": "time_slow",
+   "name": "时空减速",
+   "kind": "timeSlow",
+   "trigger": "active",
+   "cooldown": 9,
+   "initialDelay": 2,
+   "fx": "time",
+   "element": null,
+   "params": {
+    "radius": 110,
+    "duration": 4,
+    "slow": 0.6
+   },
+   "desc": "制造时间缓慢领域，敌人减速 60%"
+  },
+  {
+   "id": "random_spell",
+   "name": "奥术万象",
+   "kind": "randomSpell",
+   "trigger": "active",
+   "cooldown": 5,
+   "initialDelay": 1.5,
+   "fx": "arcane",
+   "element": null,
+   "params": {
+    "pool": [
+     "meteor",
+     "chain_lightning",
+     "frost_nova",
+     "fireball"
+    ]
+   },
+   "desc": "随机释放陨石、闪电链、冰冻或火球"
+  },
+  {
+   "id": "meteor",
+   "name": "陨石术",
+   "kind": "meteor",
+   "trigger": "active",
+   "cooldown": 10,
+   "initialDelay": 2,
+   "fx": "meteor",
+   "element": "fire",
+   "params": {
+    "radius": 95,
+    "dmgMult": 4.0,
+    "stun": 0.6
+   },
+   "desc": "召唤巨型陨石轰击敌群"
+  },
+  {
+   "id": "tnt_blast",
+   "name": "TNT 爆破",
+   "kind": "contactExplode",
+   "trigger": 28,
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "explosion_big",
+   "element": "explosive",
+   "params": {
+    "radius": 70,
+    "dmgMult": 6.0
+   },
+   "desc": "接触敌人后爆炸，造成范围伤害"
+  },
+  {
+   "id": "bot_blast",
+   "name": "自爆程序",
+   "kind": "contactExplode",
+   "trigger": 28,
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "explosion_mid",
+   "element": "explosive",
+   "params": {
+    "radius": 60,
+    "dmgMult": 5.0
+   },
+   "desc": "冲向敌人自爆"
+  },
+  {
+   "id": "mine_trap",
+   "name": "地雷",
+   "kind": "mine",
+   "trigger": 26,
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "explosion_mid",
+   "element": "explosive",
+   "params": {
+    "radius": 60,
+    "dmgMult": 1.0,
+    "flat": 70
+   },
+   "desc": "敌人经过时引爆"
+  },
+  {
+   "id": "flame_spray",
+   "name": "持续喷火",
+   "kind": "coneAttack",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "flame",
+   "element": "fire",
+   "params": {
+    "length": 85,
+    "status": "burn",
+    "duration": 2,
+    "power": 0.25
+   },
+   "desc": "前方扇形喷火并点燃敌人"
+  },
+  {
+   "id": "cannon_splash",
+   "name": "重炮轰击",
+   "kind": "splash",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "explosion_mid",
+   "element": "explosive",
+   "params": {
+    "radius": 75,
+    "pct": 0.85
+   },
+   "desc": "炮弹造成大范围爆炸"
+  },
+  {
+   "id": "rail_shot",
+   "name": "电磁贯穿",
+   "kind": "lineAttack",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "rail",
+   "element": "lightning",
+   "params": {
+    "length": 560
+   },
+   "desc": "射出贯穿直线上所有敌人的电磁弹"
+  },
+  {
+   "id": "missile_barrage",
+   "name": "导弹齐射",
+   "kind": "missiles",
+   "trigger": "active",
+   "cooldown": 5,
+   "initialDelay": 1.5,
+   "fx": "missile",
+   "element": "explosive",
+   "params": {
+    "count": 4,
+    "dmgMult": 1.6,
+    "radius": 40
+   },
+   "desc": "发射 4 枚追踪导弹"
+  },
+  {
+   "id": "mech_missiles",
+   "name": "机甲导弹",
+   "kind": "missiles",
+   "trigger": "active",
+   "cooldown": 7,
+   "initialDelay": 2,
+   "fx": "missile",
+   "element": "explosive",
+   "params": {
+    "count": 3,
+    "dmgMult": 1.4,
+    "radius": 40
+   },
+   "desc": "发射 3 枚追踪导弹"
+  },
+  {
+   "id": "armor_plating",
+   "name": "复合装甲",
+   "kind": "damageReduction",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "pct": 0.15
+   },
+   "desc": "受到伤害降低 15%"
+  },
+  {
+   "id": "dragon_fire_breath",
+   "name": "烈焰龙息",
+   "kind": "breath",
+   "trigger": "active",
+   "cooldown": 5,
+   "initialDelay": 1.5,
+   "fx": "fire_breath",
+   "element": "fire",
+   "params": {
+    "length": 200,
+    "dmgMult": 2.0,
+    "status": "burn",
+    "duration": 3,
+    "power": 0.3,
+    "slowmo": 1
+   },
+   "desc": "喷吐扇形龙息，灼烧前方敌人"
+  },
+  {
+   "id": "dragon_frost_breath",
+   "name": "寒冰龙息",
+   "kind": "breath",
+   "trigger": "active",
+   "cooldown": 6,
+   "initialDelay": 1.5,
+   "fx": "frost_breath",
+   "element": "ice",
+   "params": {
+    "length": 200,
+    "dmgMult": 1.6,
+    "status": "freeze",
+    "duration": 1.6,
+    "power": 0,
+    "slowmo": 1
+   },
+   "desc": "喷吐冰息，大范围冻结"
+  },
+  {
+   "id": "phoenix_rebirth",
+   "name": "浴火重生",
+   "kind": "revive",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "phoenix",
+   "element": null,
+   "params": {
+    "chance": 1.0,
+    "hpPct": 1.0,
+    "times": 1
+   },
+   "desc": "死亡后以满生命复活一次"
+  },
+  {
+   "id": "phoenix_flames",
+   "name": "炽羽",
+   "kind": "splash",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "explosion_small",
+   "element": "fire",
+   "params": {
+    "radius": 40,
+    "pct": 0.5
+   },
+   "desc": "攻击溅射火焰"
+  },
+  {
+   "id": "titan_storm",
+   "name": "雷霆万钧",
+   "kind": "globalLightning",
+   "trigger": "active",
+   "cooldown": 8,
+   "initialDelay": 2,
+   "fx": "global_lightning",
+   "element": "lightning",
+   "params": {
+    "count": 8,
+    "dmgMult": 2.2,
+    "stun": 0.5,
+    "slowmo": 1
+   },
+   "desc": "召唤全屏闪电打击 8 个敌人"
+  },
+  {
+   "id": "demon_summon",
+   "name": "恶魔召唤",
+   "kind": "summon",
+   "trigger": "active",
+   "cooldown": 8,
+   "initialDelay": 1,
+   "fx": "summon_fire",
+   "element": null,
+   "params": {
+    "unit": "demon",
+    "count": 2,
+    "slowmo": 1
+   },
+   "desc": "召唤 2 只恶魔"
+  },
+  {
+   "id": "demon_fire_aura",
+   "name": "地狱火光环",
+   "kind": "burnAura",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "fire_aura",
+   "element": "fire",
+   "params": {
+    "radius": 70,
+    "dmgMult": 0.4
+   },
+   "desc": "持续灼烧附近敌人"
+  },
+  {
+   "id": "angel_grace",
+   "name": "圣光普照",
+   "kind": "healAllies",
+   "trigger": "active",
+   "cooldown": 6,
+   "initialDelay": 2,
+   "fx": "heal_big",
+   "element": "holy",
+   "params": {
+    "count": 8,
+    "pct": 0.25
+   },
+   "desc": "治疗 8 名友军 25% 生命"
+  },
+  {
+   "id": "angel_resurrect",
+   "name": "天使复活",
+   "kind": "resurrect",
+   "trigger": "active",
+   "cooldown": 12,
+   "initialDelay": 6,
+   "fx": "resurrect",
+   "element": "holy",
+   "params": {
+    "count": 2,
+    "hpPct": 0.5,
+    "slowmo": 1
+   },
+   "desc": "复活 2 名阵亡友军"
+  },
+  {
+   "id": "hydra_heads",
+   "name": "九头齐噬",
+   "kind": "multiTarget",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": null,
+   "element": null,
+   "params": {
+    "count": 3
+   },
+   "desc": "每次攻击同时攻击 3 个目标"
+  },
+  {
+   "id": "treant_entangle",
+   "name": "根须缠绕",
+   "kind": "entangle",
+   "trigger": "active",
+   "cooldown": 8,
+   "initialDelay": 1.5,
+   "fx": "entangle",
+   "element": null,
+   "params": {
+    "radius": 130,
+    "stun": 1.5,
+    "shieldPct": 0.15
+   },
+   "desc": "缠绕范围内敌人，并为友军施加护盾"
+  },
+  {
+   "id": "treant_saplings",
+   "name": "树苗召唤",
+   "kind": "summon",
+   "trigger": "active",
+   "cooldown": 10,
+   "initialDelay": 3,
+   "fx": "summon_nature",
+   "element": null,
+   "params": {
+    "unit": "sapling",
+    "count": 2
+   },
+   "desc": "召唤 2 个树苗卫士"
+  },
+  {
+   "id": "behemoth_laser",
+   "name": "毁灭激光",
+   "kind": "beam",
+   "trigger": "active",
+   "cooldown": 7,
+   "initialDelay": 2,
+   "fx": "laser",
+   "element": "lightning",
+   "params": {
+    "length": 480,
+    "dmgMult": 3.5,
+    "slowmo": 1
+   },
+   "desc": "蓄力发射持续激光贯穿战线"
+  },
+  {
+   "id": "death_lifesteal",
+   "name": "死亡汲取",
+   "kind": "lifesteal",
+   "trigger": "passive",
+   "cooldown": 0,
+   "initialDelay": 0,
+   "fx": "drain",
+   "element": null,
+   "params": {
+    "pct": 0.4
+   },
+   "desc": "攻击回复造成伤害 40% 的生命"
+  }
+ ]
+}
