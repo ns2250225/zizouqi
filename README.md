@@ -1,17 +1,49 @@
 # 一线决战（One Line Battle）
 
-单条竖直战线 + 三选一卡牌构筑 + 自动战斗 + 回合扣血 + Roguelike 成长的网页策略游戏，适配 PC 与移动端浏览器。
+单条竖直战线 + 三选一卡牌构筑 + 自动战斗 + 回合扣血 + Roguelike 成长的网页策略游戏，适配 PC 与移动端浏览器。支持 **PvP 好友实时对战**（分享链接 / 二维码邀请）与 Docker 一键部署。
 
 ## 快速开始
 
 ```bash
 npm install
-npm run dev        # 本地开发
+npm run dev        # 本地开发（前端，需另开终端跑 PvP 服务器）
+npm run server     # PvP 服务器（Express + WebSocket，端口 3000，dev 由 vite 自动代理）
 npm run build      # 类型检查 + 生产构建，输出到 dist/
 npm run preview    # 预览构建结果
 ```
 
-`dist/` 为纯静态文件，可直接部署到 Nginx 或任意静态托管（`base` 为相对路径，可放在任意子目录）。
+`dist/` 为纯静态文件，可直接部署到 Nginx 或任意静态托管（`base` 为相对路径，可放在任意子目录）；单机模式不依赖后端。
+
+## PvP 实时对战
+
+与好友的实时 1v1 对战（Node.js 后端）：
+
+- **邀请方式**：创建房间后生成 6 位房间码 + 分享链接（`/?pvp=房间码`）+ 二维码，对方打开即可加入；也可手动输入房间码。
+- **同步机制**：服务器只做房间管理、信令转发与超时裁判；抽卡候选由服务器下发的 `draftSeed` 确定性生成（双方看到的候选完全一致），战斗由双方客户端用相同的军队数据 + 战斗种子运行同一个确定性模拟（锁步），结果天然一致，无需帧同步。
+- **对局流程**：双方各 8 格生命；每回合从相同的 3 组三选一候选中各自选卡构筑军团（部队继承、羁绊、组合进化均独立结算），选完自动开战，败方扣 1 格，先打空对方生命者胜；断线 60 秒内可重连恢复，超时判负；对局结束后可再战。
+- **公平性设计**：加入方视角上下翻转（双方都在"我方在下方"的视角作战）；战斗单位上限双方固定 90，不受设备性能分级影响；抽卡池基于中立状态生成，前置条件卡在 PvP 中禁用。
+
+### 开发调试
+
+```bash
+npm run server     # 终端 1：PvP 服务器（ws://localhost:3000/ws）
+npm run dev        # 终端 2：vite 开发服务器（/ws 与 /api 自动代理到 3000）
+```
+
+生产部署时同一个 Node 进程同时托管 `dist/` 静态文件与 WebSocket（`server/index.mjs`）。
+
+## Docker 部署
+
+镜像内所有依赖均通过国内镜像源下载（npm → `registry.npmmirror.com`，Alpine apk → `mirrors.aliyun.com`，`server/package-lock.json` 的下载地址已固定为国内源）：
+
+```bash
+docker compose up -d --build      # 一键构建并启动，访问 http://<服务器IP>:3000
+# 或
+docker build -t zizouqi .
+docker run -d -p 3000:3000 --name zizouqi zizouqi
+```
+
+镜像为多阶段构建：编译前端 → 安装后端依赖 → `node:20-alpine` 运行时（约 200MB），单个进程同时提供游戏页面、REST 健康检查（`/api/health`）与 WebSocket 对战服务。
 
 ## 素材管线
 
@@ -48,14 +80,14 @@ npm run assets
 - **扩展模式**：无尽模式（敌军强度每回合精确为上回合的 1.5 倍，`balance.json` 中 `endlessGrowth` 可调）、每日挑战（按日期种子 + 每日规则）、四档自定义难度、5 种随回合切换的战场主题、战斗录像回放、对局码分享（相同种子开局）。
 - **移动端**：竖屏优先窄长战场；横屏（宽 ≥ 820）切换为居中战线 + 左侧敌情/阵容 + 右侧卡牌面板；所有按钮满足触控尺寸；支持全屏。
 
-未实现：PRD 中标为“可选”的 PvP 异步对战（需要后端）。
+未实现：PRD 中标为“可选”的 PvP 异步对战（需要后端）→ 已在 `pvp` 分支以实时对战形式实现（见上文「PvP 实时对战」）。
 
 ## 目录结构
 
 ```
 src/
   components/   Card、CardSelection、HealthBar、BattleHUD、RoundResult 等
-  views/        MainMenu、GameView、CardCollection、Settings、StatsView、Credits
+  views/        MainMenu、GameView、PvpView、CardCollection、Settings、StatsView、Credits
   game/
     core/       类型、随机数、GameManager（回合/阶段/胜负）
     battle/     BattleSim（固定步长战斗模拟）、空间索引
@@ -65,14 +97,18 @@ src/
     synergies/  羁绊与组合
     enemy/      敌方阵容生成与难度
     effects/    特效库
-    renderer/   PixiJS 渲染、粒子、动画、相机、纹理
+    renderer/   PixiJS 渲染、粒子、动画、相机、纹理（支持 PvP 视角翻转）
     audio/      Howler 音频管理
     data/       配置加载、存档、素材清单
+    pvp/        PvP 协议、WebSocket 客户端、本地对局状态（PvpMatch）
   data/         units / cards / skills / synergies / balance（JSON 配置）
-  stores/       Pinia：game、settings、stats
+  stores/       Pinia：game、settings、stats、pvp
+server/         PvP 服务器（Express + ws：房间管理、信令转发、超时裁判）
 scripts/        素材下载、处理、清单、校验
 licenses/       ASSET_CREDITS.md
-tests/          Vitest 逻辑测试
+tests/          Vitest 逻辑测试（含 PvP 抽卡一致性 / 战斗确定性 / 房间状态机）
+Dockerfile      多阶段构建（国内源）
+docker-compose.yml
 ```
 
 数值全部位于 `src/data/*.json`，新增兵种只需添加配置与技能条目，无需修改战斗引擎。

@@ -99,6 +99,8 @@ export class BattleRenderer {
   private acc = 0;
   speed = 1;
   paused = false;
+  /** PvP 加入方视角：上下翻转战场（team 0 显示在上方），不影响模拟本身 */
+  flip = false;
   private time = 0;
   private callbacks: RendererCallbacks = {};
   private settings: RendererSettings;
@@ -192,7 +194,8 @@ export class BattleRenderer {
   sy(y: number) {
     const { h } = this.size();
     const m = this.margin;
-    return m + (y / 1000) * (h - m * 2);
+    const v = m + (y / 1000) * (h - m * 2);
+    return this.flip ? h - v : v;
   }
   len(v: number) {
     const { h } = this.size();
@@ -506,7 +509,7 @@ export class BattleRenderer {
         continue;
       }
       v.bar.visible = true;
-      const facing = u.team === 1 ? -1 : 1;
+      const facing = (u.team === 1) !== this.flip ? -1 : 1;
       v.body.scale.set(scale * pop * facing, scale * pop);
       // 动作：行走摆动、攻击突进、施法放大、飞行悬浮
       let bob = 0;

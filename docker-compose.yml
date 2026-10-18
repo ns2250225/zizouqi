@@ -1,0 +1,19 @@
+# 一键部署：docker compose up -d --build
+# 访问 http://<服务器IP>:3000
+services:
+  zizouqi:
+    build: .
+    image: zizouqi:latest
+    container_name: zizouqi
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - TZ=Asia/Shanghai
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 5s
+      retries: 3

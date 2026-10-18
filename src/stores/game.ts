@@ -9,7 +9,7 @@ import { getCard } from '../game/data/ConfigLoader';
 import { AudioManager } from '../game/audio/AudioManager';
 import { useStats } from './stats';
 
-export type View = 'menu' | 'game' | 'codex' | 'stats' | 'settings' | 'credits';
+export type View = 'menu' | 'game' | 'pvp' | 'codex' | 'stats' | 'settings' | 'credits';
 
 export interface Toast {
   id: number;

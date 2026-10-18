@@ -85,6 +85,7 @@ onBeforeUnmount(() => (marchers.value = []));
       </div>
       <div class="buttons">
         <button class="btn primary big" @click="click(() => (showNew = true))">开始游戏</button>
+        <button class="btn pvp" @click="click(() => (game.view = 'pvp'))">⚔ PvP 对战 · 好友邀请</button>
         <button class="btn" :disabled="!game.hasSave" @click="continueGame">继续游戏</button>
         <div class="row">
           <button class="btn" @click="open('codex', 'units')">兵种图鉴</button>

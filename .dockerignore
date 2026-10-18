@@ -1,0 +1,11 @@
+node_modules
+server/node_modules
+dist
+.asset_cache
+.git
+.gitignore
+*.log
+.DS_Store
+README.md
+prd.md
+tests

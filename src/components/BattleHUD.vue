@@ -17,6 +17,9 @@ const props = defineProps<{
   synergies: ActiveSynergy[];
   combos: string[];
   replay: boolean;
+  /** PvP：自定义上下两侧阵营名称 */
+  topName?: string;
+  bottomName?: string;
 }>();
 defineEmits<{ pause: []; speed: []; settings: []; menu: []; fullscreen: [] }>();
 
@@ -39,7 +42,7 @@ const inBattle = computed(() => props.phase === 'BATTLE' || props.replay);
   <div v-if="position === 'top'" class="hud top">
     <button class="icon-btn" aria-label="菜单" @click="$emit('menu')">☰</button>
     <div class="side enemy">
-      <div class="team-name">敌方 · 暗影军团</div>
+      <div class="team-name">{{ topName ?? '敌方 · 暗影军团' }}</div>
       <HealthBar team="enemy" :hp="run.enemyHp" :max="run.maxHp" :infinite="run.mode === 'endless'" compact />
     </div>
     <div class="center">
@@ -58,7 +61,7 @@ const inBattle = computed(() => props.phase === 'BATTLE' || props.replay);
   <div v-else class="hud bottom">
     <div class="row">
       <div class="side player">
-        <div class="team-name">我方 · 星辉军团</div>
+        <div class="team-name">{{ bottomName ?? '我方 · 星辉军团' }}</div>
         <HealthBar team="player" :hp="run.playerHp" :max="run.maxHp" compact />
       </div>
       <div v-if="inBattle" class="battle-info">

@@ -1,28 +1,41 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount } from 'vue';
 import { useGame } from './stores/game';
+import { usePvp } from './stores/pvp';
 import { AudioManager } from './game/audio/AudioManager';
 import MainMenu from './views/MainMenu.vue';
 import GameView from './views/GameView.vue';
+import PvpView from './views/PvpView.vue';
 import CardCollection from './views/CardCollection.vue';
 import Settings from './views/Settings.vue';
 import StatsView from './views/StatsView.vue';
 import Credits from './views/Credits.vue';
 
 const game = useGame();
+const pvp = usePvp();
 
 // 浏览器要求用户交互后才能播放音频：首次点击时开始菜单音乐
 function unlockAudio() {
-  if (game.view !== 'game') AudioManager.playBgm('menu');
+  if (game.view !== 'game' && game.view !== 'pvp') AudioManager.playBgm('menu');
   window.removeEventListener('pointerdown', unlockAudio);
 }
-onMounted(() => window.addEventListener('pointerdown', unlockAudio));
+onMounted(() => {
+  window.addEventListener('pointerdown', unlockAudio);
+  // 邀请链接：/?pvp=房间码 → 直接打开 PvP 加入界面
+  const code = new URLSearchParams(location.search).get('pvp');
+  if (code) {
+    pvp.pendingCode = code.trim().toUpperCase();
+    game.view = 'pvp';
+    history.replaceState(null, '', location.pathname);
+  }
+});
 onBeforeUnmount(() => window.removeEventListener('pointerdown', unlockAudio));
 </script>
 
 <template>
   <MainMenu v-if="game.view === 'menu'" />
   <GameView v-else-if="game.view === 'game' && game.run" />
+  <PvpView v-else-if="game.view === 'pvp'" />
   <CardCollection v-else-if="game.view === 'codex'" />
   <Settings v-else-if="game.view === 'settings'" />
   <StatsView v-else-if="game.view === 'stats'" />
