@@ -33,7 +33,8 @@ export interface RoomSnapshot {
   round: number;
   hp: [number, number];
   names: { A: string; B: string };
-  draftSeed: number;
+  draftSeedA: number;
+  draftSeedB: number;
   picks: { cards: string[]; rerolls: number };
   oppPickCount: number;
   armies: { A: ArmySpec | null; B: ArmySpec | null };
@@ -52,7 +53,8 @@ export class Room {
   round: number;
   hp: [number, number];
   players: { A: RoomPlayer | null; B: RoomPlayer | null };
-  draftSeed: number;
+  draftSeedA: number;
+  draftSeedB: number;
   battleSeed: number;
   picks: { A: { cards: string[]; rerolls: number }; B: { cards: string[]; rerolls: number } };
   armies: { A: ArmySpec | null; B: ArmySpec | null };

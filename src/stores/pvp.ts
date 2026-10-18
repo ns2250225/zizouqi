@@ -234,7 +234,7 @@ export const usePvp = defineStore('pvp', {
           this.peerName = this.role === 'A' ? m.names.B : m.names.A;
           break;
         case 'round':
-          this.onRound(m.round, m.draftSeed, m.hp, m.fresh);
+          this.onRound(m.round, m.draftSeedA, m.draftSeedB, m.hp, m.fresh);
           break;
         case 'peerPick':
           this.peerPicks = m.draw;
@@ -288,7 +288,7 @@ export const usePvp = defineStore('pvp', {
       }
     },
 
-    onRound(round: number, draftSeed: number, hp: [number, number], fresh: boolean) {
+    onRound(round: number, draftSeedA: number, draftSeedB: number, hp: [number, number], fresh: boolean) {
       this.round = round;
       this.hp = [hp[0], hp[1]];
       this.phase = 'draft';
@@ -299,7 +299,7 @@ export const usePvp = defineStore('pvp', {
       this.peerOffline = false;
       this.lastOutcomeReported = false;
       if (fresh || !this.match) this.match = new PvpMatch();
-      this.match.startRound(round, draftSeed);
+      this.match.startRound(round, this.role === 'B' ? draftSeedB : draftSeedA);
       this.syncHpToRun();
       this.stopAutoPick();
       this._autoPickTimer = window.setTimeout(() => this.autoPickRest(), DRAFT_AUTO_PICK_MS);
@@ -314,6 +314,11 @@ export const usePvp = defineStore('pvp', {
       run.maxHp = BALANCE.startHp;
     },
 
+    /** 我的候选种子（服务器为双方分别下发） */
+    myDraftSeed(snap: PvpSnapshot): number {
+      return this.role === 'B' ? snap.draftSeedB : snap.draftSeedA;
+    },
+
     applySnapshot(snap: PvpSnapshot) {
       this.hp = [snap.hp[0], snap.hp[1]];
       if (snap.names.A && snap.names.B) this.peerName = this.role === 'A' ? snap.names.B : snap.names.A;
@@ -323,7 +328,7 @@ export const usePvp = defineStore('pvp', {
           break;
         case 'draft': {
           this.match = new PvpMatch();
-          this.match.startRound(snap.round, snap.draftSeed);
+          this.match.startRound(snap.round, this.myDraftSeed(snap));
           this.syncHpToRun();
           const picks = snap.picks;
           for (const card of picks.cards) this.match.pick(card);
@@ -339,7 +344,7 @@ export const usePvp = defineStore('pvp', {
         case 'battle':
           if (snap.armies.A && snap.armies.B) {
             this.match = new PvpMatch();
-            this.match.startRound(snap.round, snap.draftSeed);
+            this.match.startRound(snap.round, this.myDraftSeed(snap));
             this.syncHpToRun();
             this.round = snap.round;
             this.phase = 'battle';

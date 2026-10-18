@@ -10,7 +10,8 @@ export interface PvpSnapshot {
   round: number;
   hp: [number, number];
   names: { A: string; B: string };
-  draftSeed: number;
+  draftSeedA: number;
+  draftSeedB: number;
   picks: { cards: string[]; rerolls: number };
   oppPickCount: number;
   armies: { A: ArmySpec | null; B: ArmySpec | null };
@@ -33,7 +34,7 @@ export type ServerMsg =
   | { t: 'created'; code: string; sid: string; role: 'A'; name: string }
   | { t: 'joined'; code: string; sid: string; role: PvpRole; rejoin: boolean; name: string; snapshot: PvpSnapshot }
   | { t: 'start'; names: { A: string; B: string } }
-  | { t: 'round'; round: number; draftSeed: number; hp: [number, number]; fresh: boolean }
+  | { t: 'round'; round: number; draftSeedA: number; draftSeedB: number; hp: [number, number]; fresh: boolean }
   | { t: 'peerPick'; round: number; draw: number }
   | { t: 'peerReroll'; round: number }
   | { t: 'battle'; round: number; battleSeed: number; armyA: ArmySpec; armyB: ArmySpec }

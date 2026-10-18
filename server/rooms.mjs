@@ -47,7 +47,8 @@ export class Room {
     this.round = 0;
     this.hp = [START_HP, START_HP];
     this.players = { A: null, B: null }; // { sid, name, ws, connected }
-    this.draftSeed = 0;
+    this.draftSeedA = 0;
+    this.draftSeedB = 0;
     this.battleSeed = 0;
     this.picks = { A: { cards: [], rerolls: 0 }, B: { cards: [], rerolls: 0 } };
     this.armies = { A: null, B: null };
@@ -110,7 +111,8 @@ export class Room {
       round: this.round,
       hp: this.hp,
       names: { A: this.players.A?.name ?? '', B: this.players.B?.name ?? '' },
-      draftSeed: this.draftSeed,
+      draftSeedA: this.draftSeedA,
+      draftSeedB: this.draftSeedB,
       picks: this.picks[side],
       oppPickCount: this.picks[opp].cards.length,
       armies: this.armies,
@@ -150,12 +152,21 @@ export class Room {
     this.clearPhaseTimers();
     this.round += 1;
     this.state = 'draft';
-    this.draftSeed = newSeed();
+    // 双方各自独立的候选种子：候选卡互不相同，且受各自成长状态影响
+    this.draftSeedA = newSeed();
+    this.draftSeedB = newSeed();
     this.picks = { A: { cards: [], rerolls: 0 }, B: { cards: [], rerolls: 0 } };
     this.armies = { A: null, B: null };
     this.results = { A: null, B: null };
     this.touch();
-    this.broadcast({ t: 'round', round: this.round, draftSeed: this.draftSeed, hp: this.hp, fresh: this.round === 1 });
+    this.broadcast({
+      t: 'round',
+      round: this.round,
+      draftSeedA: this.draftSeedA,
+      draftSeedB: this.draftSeedB,
+      hp: this.hp,
+      fresh: this.round === 1,
+    });
     this.timers.draft = setTimeout(() => {
       // 客户端会自动选卡并提交；仍缺军队时用其历史军队或空军队兜底，保证对局继续
       if (!this.armies.A) this.armies.A = emptyArmy();

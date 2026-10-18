@@ -2,9 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { BattleSim } from '../src/game/battle/BattleSim';
 import { hashSeed } from '../src/game/core/rng';
 import type { ArmySpec } from '../src/game/core/types';
-import { PvpMatch, neutralRun } from '../src/game/pvp/PvpMatch';
-import { generateOffer } from '../src/game/cards/CardDraw';
-import { Rng } from '../src/game/core/rng';
+import { PvpMatch } from '../src/game/pvp/PvpMatch';
+import { getCard } from '../src/game/data/ConfigLoader';
 import { Room, START_HP } from '../server/rooms.mjs';
 
 function armyOf(entries: { unit: string; count: number }[]): ArmySpec {
@@ -12,40 +11,72 @@ function armyOf(entries: { unit: string; count: number }[]): ArmySpec {
 }
 
 describe('PvP 抽卡同步', () => {
-  it('相同 draftSeed 下双方候选完全一致（含幸运三连判定）', () => {
-    for (const round of [1, 5, 12]) {
+  it('同一玩家相同 draftSeed 可复现相同候选（含幸运三连判定）', () => {
+    for (const round of [1, 3, 12]) {
       for (const seed of [1, 987654321, 42]) {
-        const neutral = neutralRun(round);
-        const a = generateOffer(neutral, new Rng(hashSeed(seed, 'pvpdraw', 0)));
-        const b = generateOffer(neutralRun(round), new Rng(hashSeed(seed, 'pvpdraw', 0)));
-        expect(a).toEqual(b);
-        expect(a.offer.length).toBe(3);
+        const a = new PvpMatch();
+        a.startRound(round, seed);
+        const b = new PvpMatch();
+        b.startRound(round, seed);
+        expect(b.run.offer).toEqual(a.run.offer);
+        expect(a.run.offer.length).toBe(3);
       }
     }
   });
 
-  it('两个玩家的 PvpMatch 在同一回合看到相同候选，重抽只影响自己', () => {
-    const seed = hashSeed('room', 'draft');
-    const host = new PvpMatch();
-    const guest = new PvpMatch();
-    host.startRound(1, seed);
-    guest.startRound(1, seed);
-    expect(host.run.offer).toEqual(guest.run.offer);
-
-    host.reroll();
-    expect(host.run.rerolls).toBe(guest.run.rerolls - 1);
-    // 重抽后双方候选可以不同（各自独立），但同一次数下重抽结果一致
-    const guest2 = new PvpMatch();
-    guest2.startRound(1, seed);
-    guest2.reroll();
-    expect(host.run.offer).toEqual(guest2.run.offer);
+  it('双方使用各自的 draftSeed，候选互不相同', () => {
+    const a = new PvpMatch();
+    a.startRound(1, 111111111);
+    const b = new PvpMatch();
+    b.startRound(1, 222222222);
+    expect(a.run.offer).not.toEqual(b.run.offer);
   });
 
-  it('三次选卡后进入准备阶段并可构建军队，双方军队随选卡不同而不同', () => {
+  it('个人成长影响候选池：稀有度提升后能抽到高稀有度卡', () => {
+    const m = new PvpMatch();
+    m.startRound(8, 555);
+    m.run.progression.rarityMult.MYTHIC = 1000;
+    m.refreshOffer();
+    expect(m.run.offer.some((id) => getCard(id).rarity === 'MYTHIC')).toBe(true);
+  });
+
+  it('重抽只影响自己的候选，且同参数可复现', () => {
+    const seed = hashSeed('room', 'draft');
+    const host = new PvpMatch();
+    host.startRound(1, seed);
+    const guest = new PvpMatch();
+    guest.startRound(1, seed);
+    expect(host.run.offer).toEqual(guest.run.offer); // 未重抽时同种子同状态一致
+    const before = [...host.run.offer];
+    expect(host.reroll()).toBe(true);
+    expect(host.run.offer).not.toEqual(before);
+    expect(host.run.rerolls).toBe(guest.run.rerolls - 1);
+    const host2 = new PvpMatch();
+    host2.startRound(1, seed);
+    host2.reroll();
+    expect(host.run.offer).toEqual(host2.run.offer);
+  });
+
+  it('断线重连后按快照可精确恢复当前候选与进度', () => {
+    const seed = 778899;
+    const m = new PvpMatch();
+    m.startRound(2, seed);
+    m.pick(m.run.offer[1]);
+    m.reroll();
+    const restored = new PvpMatch();
+    restored.startRound(2, seed);
+    for (const card of [...m.run.history]) restored.pick(card);
+    restored.rerollCount = m.rerollCount;
+    if (restored.run.phase === 'DRAW') restored.refreshOffer();
+    expect(restored.run.offer).toEqual(m.run.offer);
+    expect(restored.run.drawCount).toBe(m.run.drawCount);
+  });
+
+  it('三次选卡后进入准备阶段并可构建军队', () => {
     const seed = hashSeed('room', 'draft2');
     const host = new PvpMatch();
-    const guest = new PvpMatch();
     host.startRound(1, seed);
+    const guest = new PvpMatch();
     guest.startRound(1, seed);
     for (const m of [host, guest]) {
       for (let i = 0; i < 3; i++) m.pick(m.run.offer[0]);

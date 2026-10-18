@@ -318,7 +318,7 @@ const aliveView = computed<[number, number]>(() =>
     <div v-if="!inRoom" class="overlay lobby">
       <div class="panel lobby-panel">
         <h3>⚔ PvP 对战</h3>
-        <p class="hint">与好友实时对战：双方从相同的候选卡中构筑军团，在单条战线上决出胜负！</p>
+        <p class="hint">与好友实时对战：双方各自从不同的候选卡中构筑军团，在单条战线上决出胜负！</p>
         <div class="label">你的昵称</div>
         <input v-model="name" type="text" maxlength="16" placeholder="指挥官" />
         <template v-if="phase === 'idle'">

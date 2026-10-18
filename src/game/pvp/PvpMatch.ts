@@ -2,16 +2,16 @@ import { reactive } from 'vue';
 import { BALANCE } from '../data/ConfigLoader';
 import { createRun, pickCard } from '../core/GameManager';
 import { generateOffer } from '../cards/CardDraw';
-import { buildPlayerArmy, emptyProgression } from '../cards/CardEffect';
+import { buildPlayerArmy } from '../cards/CardEffect';
 import { hashSeed, Rng, randomSeed } from '../core/rng';
 import type { ArmySpec, RunState } from '../core/types';
 
 /**
  * PvP 本地对局状态。
  *
- * 抽卡候选由服务器下发的 draftSeed 确定性生成（基于中立的虚拟 RunState，不含任何玩家私有
- * 成长），保证双方看到的候选完全一致；选卡后的军队构建、羁绊、连选奖励等仍基于各自的
- * RunState 独立累积。
+ * 服务器为双方分别下发独立的 draftSeed：候选卡由自己的种子 + 自己的对局状态（回合数、
+ * 历史、永久成长）确定性生成，双方候选互不相同，且稀有度成长、前置条件卡等与单机一致；
+ * 重抽次数只影响自己的候选（rerollCount 递增派生，断线重连后可精确恢复当前候选）。
  */
 export class PvpMatch {
   /** reactive 包装使视图能跟踪类内部的直接属性修改 */
@@ -44,17 +44,17 @@ export class PvpMatch {
     this.refreshOffer();
   }
 
-  /** 由 draftSeed 派生当前抽卡候选（双方一致）；rerollCount 只影响自己的候选 */
+  /** 由自己的 draftSeed 派生当前抽卡候选；rerollCount 只影响自己的候选 */
   refreshOffer() {
     const rng = new Rng(hashSeed(this.draftSeed, 'pvpdraw', this.rerollCount));
-    const { offer, lucky } = generateOffer(neutralRun(this.run.round), rng);
+    const { offer, lucky } = generateOffer(this.run, rng);
     this.run.offer = offer;
     this.run.luckyOffer = lucky;
   }
 
   pick(cardId: string): { notes: string[]; streak: { tag: string; count: number } | null } {
     const res = pickCard(this.run, cardId);
-    // pickCard 内部用 run.rngState 生成了下一个候选，PvP 中用共享 draftSeed 覆盖
+    // pickCard 内部用 run.rngState 生成了下一个候选，PvP 中用自己的 draftSeed 派生覆盖
     if (this.run.phase === 'DRAW') this.refreshOffer();
     return res;
   }
@@ -78,16 +78,6 @@ export class PvpMatch {
   buildArmy(): ArmySpec {
     return buildPlayerArmy(this.run);
   }
-}
-
-/** 抽卡池所用的中立状态：仅回合数有效，历史/成长/每日修正为空（前置条件卡在 PvP 中自然禁用） */
-export function neutralRun(round: number): RunState {
-  const r = createRun({ mode: 'standard', difficulty: 'pvp', seed: 0 });
-  r.round = round;
-  r.history = [];
-  r.progression = emptyProgression();
-  r.dailyModifier = null;
-  return r;
 }
 
 export function emptyArmySpec(): ArmySpec {
