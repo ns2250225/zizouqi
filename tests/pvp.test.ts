@@ -57,19 +57,55 @@ describe('PvP 抽卡同步', () => {
     expect(host.run.offer).toEqual(host2.run.offer);
   });
 
-  it('断线重连后按快照可精确恢复当前候选与进度', () => {
+  it('同一回合的 3 次抽卡候选互不相同', () => {
+    for (const seed of [123456789, 987654321, 42]) {
+      const m = new PvpMatch();
+      m.startRound(2, seed);
+      const draw0 = [...m.run.offer];
+      m.pick(m.run.offer[0]);
+      const draw1 = [...m.run.offer];
+      m.pick(m.run.offer[0]);
+      const draw2 = [...m.run.offer];
+      expect(draw1).not.toEqual(draw0);
+      expect(draw2).not.toEqual(draw0);
+      expect(draw2).not.toEqual(draw1);
+    }
+  });
+
+  it('断线重连后按快照可精确恢复（含重抽发生的位置）', () => {
     const seed = 778899;
     const m = new PvpMatch();
     m.startRound(2, seed);
-    m.pick(m.run.offer[1]);
-    m.reroll();
+    const first = m.run.offer[1];
+    m.pick(first);
+    m.reroll(); // 第 2 次抽卡前重抽
+    const second = m.run.offer[0];
+    m.pick(second);
+    const draws = [
+      { card: first, rerolls: 0 },
+      { card: second, rerolls: 1 },
+    ];
     const restored = new PvpMatch();
     restored.startRound(2, seed);
-    for (const card of [...m.run.history]) restored.pick(card);
-    restored.rerollCount = m.rerollCount;
-    if (restored.run.phase === 'DRAW') restored.refreshOffer();
+    for (const d of draws) {
+      for (let i = 0; i < d.rerolls; i++) restored.reroll();
+      restored.pick(d.card);
+    }
     expect(restored.run.offer).toEqual(m.run.offer);
     expect(restored.run.drawCount).toBe(m.run.drawCount);
+    expect(restored.rerollCount).toBe(m.rerollCount);
+    // 第 1 次抽卡前重抽的场景：恢复后当前候选仍一致
+    const m2 = new PvpMatch();
+    m2.startRound(2, seed);
+    m2.reroll();
+    const only = m2.run.offer[2];
+    m2.pick(only);
+    const restored2 = new PvpMatch();
+    restored2.startRound(2, seed);
+    for (let i = 0; i < 1; i++) restored2.reroll();
+    restored2.pick(only);
+    expect(restored2.run.offer).toEqual(m2.run.offer);
+    expect(restored2.run.drawCount).toBe(m2.run.drawCount);
   });
 
   it('三次选卡后进入准备阶段并可构建军队', () => {

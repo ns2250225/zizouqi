@@ -44,9 +44,9 @@ export class PvpMatch {
     this.refreshOffer();
   }
 
-  /** 由自己的 draftSeed 派生当前抽卡候选；rerollCount 只影响自己的候选 */
+  /** 由自己的 draftSeed + 抽卡序号 + 重抽计数派生当前候选；只影响自己的候选 */
   refreshOffer() {
-    const rng = new Rng(hashSeed(this.draftSeed, 'pvpdraw', this.rerollCount));
+    const rng = new Rng(hashSeed(this.draftSeed, 'pvpdraw', this.run.drawCount, this.rerollCount));
     const { offer, lucky } = generateOffer(this.run, rng);
     this.run.offer = offer;
     this.run.luckyOffer = lucky;

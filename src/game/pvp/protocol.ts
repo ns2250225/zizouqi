@@ -12,7 +12,8 @@ export interface PvpSnapshot {
   names: { A: string; B: string };
   draftSeedA: number;
   draftSeedB: number;
-  picks: { cards: string[]; rerolls: number };
+  /** 每次抽卡的选卡记录（含选卡前的重抽次数，用于重连后按位置精确回放） */
+  picks: { draws: { card: string; rerolls: number }[] };
   oppPickCount: number;
   armies: { A: ArmySpec | null; B: ArmySpec | null };
   battleSeed: number;

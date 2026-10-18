@@ -35,7 +35,7 @@ export interface RoomSnapshot {
   names: { A: string; B: string };
   draftSeedA: number;
   draftSeedB: number;
-  picks: { cards: string[]; rerolls: number };
+  picks: { draws: { card: string; rerolls: number }[] };
   oppPickCount: number;
   armies: { A: ArmySpec | null; B: ArmySpec | null };
   battleSeed: number;

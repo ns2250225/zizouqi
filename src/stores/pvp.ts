@@ -330,10 +330,11 @@ export const usePvp = defineStore('pvp', {
           this.match = new PvpMatch();
           this.match.startRound(snap.round, this.myDraftSeed(snap));
           this.syncHpToRun();
-          const picks = snap.picks;
-          for (const card of picks.cards) this.match.pick(card);
-          this.match.rerollCount = picks.rerolls;
-          if (picks.rerolls > 0 && this.match.run.phase === 'DRAW') this.match.refreshOffer();
+          // 按抽卡位置回放：先重放该次抽卡前的重抽，再选卡，保证候选序列与断线前一致
+          for (const d of snap.picks.draws) {
+            for (let i = 0; i < d.rerolls; i++) this.match.reroll();
+            if (this.match.run.phase === 'DRAW') this.match.pick(d.card);
+          }
           this.round = snap.round;
           this.peerPicks = snap.oppPickCount;
           this.phase = 'draft';

@@ -50,7 +50,8 @@ export class Room {
     this.draftSeedA = 0;
     this.draftSeedB = 0;
     this.battleSeed = 0;
-    this.picks = { A: { cards: [], rerolls: 0 }, B: { cards: [], rerolls: 0 } };
+    this.picks = { A: { draws: [] }, B: { draws: [] } }; // 每回合抽卡记录：{ card, rerolls: 选它之前重抽了几次 }
+    this.pendingRerolls = { A: 0, B: 0 };
     this.armies = { A: null, B: null };
     this.results = { A: null, B: null };
     this.lastRoundEnd = null;
@@ -114,7 +115,7 @@ export class Room {
       draftSeedA: this.draftSeedA,
       draftSeedB: this.draftSeedB,
       picks: this.picks[side],
-      oppPickCount: this.picks[opp].cards.length,
+      oppPickCount: this.picks[opp].draws.length,
       armies: this.armies,
       battleSeed: this.battleSeed,
       lastRoundEnd: this.lastRoundEnd,
@@ -155,7 +156,8 @@ export class Room {
     // 双方各自独立的候选种子：候选卡互不相同，且受各自成长状态影响
     this.draftSeedA = newSeed();
     this.draftSeedB = newSeed();
-    this.picks = { A: { cards: [], rerolls: 0 }, B: { cards: [], rerolls: 0 } };
+    this.picks = { A: { draws: [] }, B: { draws: [] } };
+    this.pendingRerolls = { A: 0, B: 0 };
     this.armies = { A: null, B: null };
     this.results = { A: null, B: null };
     this.touch();
@@ -242,15 +244,16 @@ export class Room {
     switch (msg.t) {
       case 'pick': {
         if (this.state !== 'draft' || msg.round !== this.round) return;
-        const cards = this.picks[side].cards;
-        if (cards.length >= 3 || typeof msg.card !== 'string') return;
-        cards.push(msg.card);
-        this.send(opp, { t: 'peerPick', round: this.round, draw: cards.length });
+        const draws = this.picks[side].draws;
+        if (draws.length >= 3 || typeof msg.card !== 'string') return;
+        draws.push({ card: msg.card, rerolls: this.pendingRerolls[side] });
+        this.pendingRerolls[side] = 0;
+        this.send(opp, { t: 'peerPick', round: this.round, draw: draws.length });
         break;
       }
       case 'reroll': {
         if (this.state !== 'draft' || msg.round !== this.round) return;
-        this.picks[side].rerolls += 1;
+        this.pendingRerolls[side] += 1;
         this.send(opp, { t: 'peerReroll', round: this.round });
         break;
       }
